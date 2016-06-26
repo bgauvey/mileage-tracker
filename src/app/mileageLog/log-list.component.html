@@ -1,21 +1,20 @@
-<h2>Milage Logs</h2>
-<ul class="logs">
-  <li *ngFor="let log of logs" (click)="onSelect(log)" [class.selected]="log === selectedLog">
-    <span class="log-element">
-      <span class="badge">{{log.id}}</span> {{log.date}}
-    </span>
-    <button class="delete-button" (click)="delete(log, $event)">Delete</button>
-  </li>
-</ul>
-
-<button (click)="addLog()">Add New Entry</button>
-<div *ngIf="addingLog">
-  <log-detail (close)="close($event)"></log-detail>
-</div>
-
-<div *ngIf="selectedLog">
-  <h2>
-    {{selectedLog.date }} 
-  </h2>
-  <button (click)="gotoDetail()">View Details</button>
-</div>
+<h3>Milage Logs</h3>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--4dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Date</th>
+      <th>Gallons</th>
+      <th>Price Per Gal</th>
+      <th>Odometer</th>
+      <th>Total Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let log of logs" >
+      <td class="mdl-data-table__cell--non-numeric">{{log.date}}</td>
+      <td>{{log.gallons}}</td>
+      <td>{{log.costPerGallon}}</td>
+      <td>{{log.odometer}}</td>
+      <td>{{log.totalCost}}</td>
+  </tbody>
+</table>
