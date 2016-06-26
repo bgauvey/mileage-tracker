@@ -1,0 +1,16 @@
+<div *ngIf="log">
+  <div class="row">
+    <div class="col-md-11">
+      <h4>    
+          {{ log.date }}&nbsp;          
+      </h4>
+      <br />
+      {{ log.odometer }}
+      <br />
+      {{ log.gallons }}, {{ log.costPerGallon }}
+    </div>
+  </div>    
+</div>   
+<div *ngIf="!log" class="row">
+   No log record found
+</div>  

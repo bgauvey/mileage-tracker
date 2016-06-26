@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "date": "06/07/2016",
+        "odometer": 52006,
+        "gallons": 21.5,
+        "costPerGallon": 1.91,
+        "totalCost": 41.07
+    },
+    {
+        "id": 2,
+        "date": "05/10/2016",
+        "odometer": 51980,
+        "gallons": 21.5,
+        "costPerGallon": 1.91,
+        "totalCost": 41.07
+    },
+    {
+        "id": 3,
+        "date": "06/15/2016",
+        "odometer": 52159,
+        "gallons": 21.5,
+        "costPerGallon": 1.91,
+        "totalCost": 41.07
+    },
+    {
+        "id": 4,
+        "date": "06/23/2016",
+        "odometer": 52299,
+        "gallons": 21.5,
+        "costPerGallon": 1.91,
+        "totalCost": 41.07
+    },
+    {
+        "id": 5,
+        "date": "05/20/2016",
+        "odometer": 52000,
+        "gallons": 21.5,
+        "costPerGallon": 1.91,
+        "totalCost": 41.07
+    }
+]
