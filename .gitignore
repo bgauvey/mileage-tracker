@@ -10,5 +10,6 @@ npm-debug.log
 src/app/**/*.js
 src/app/**/*.js.map
 
-
+# VS Code
+.vscode
 
