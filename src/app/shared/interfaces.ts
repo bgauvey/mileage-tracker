@@ -5,5 +5,13 @@ export interface IMilageLog {
     gallons: number;
     costPerGallon: number;
     totalCost: number;
+    vehicleId: number;
 }
 
+export interface IVehicle
+{
+    id: number;
+    make: string;
+    model: string;
+    year: number;
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Tundra",
+        "year": 2012
+    },
+    {
+        "id": 2,
+        "make": "Nissan",
+        "model": "Frontier",
+        "year": 2015
+    }
+]
