@@ -1,10 +1,13 @@
 <div *ngIf="log">
   <div class="mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">{{log.date}}</h2>
+      <h2 class="mdl-card__title-text">Fuel Purchase</h2>
     </div>
     <div class="mdl-card__supporting-text">
       <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col">Date</div>
+          <div class="mdl-cell mdl-cell--6-col">{{log.date | date }}</div>
+
           <div class="mdl-cell mdl-cell--6-col">Odometer</div>
           <div class="mdl-cell mdl-cell--6-col">{{log.odometer | number }} Miles</div>
           
