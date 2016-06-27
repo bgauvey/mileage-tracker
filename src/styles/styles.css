@@ -22,6 +22,10 @@ h3 {
 .mdl-layout__content {
   margin-left: .5em;
 }
+.mdl-layout__drawer {
+  background-color: #eee;
+  color: black;
+}
 .mileage-tracker-layout-transparent {
   background: url('http://www.extendedautowarranty.com/wp-content/uploads/background-road-car.png') center / cover;
 }

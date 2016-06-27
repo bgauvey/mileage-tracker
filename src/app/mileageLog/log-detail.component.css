@@ -1,0 +1,8 @@
+.row .column{
+   float:left;
+   width: 100px;
+   float: left;
+}
+.row .column.first{
+    clear: left;   
+}

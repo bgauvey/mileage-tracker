@@ -11,16 +11,18 @@
 
 <head>
     <base href="/">
-    <title>Angular 2 TypeScript App</title>
+    <title>Service Tracker</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Angular 2 JumpStart">
+    <meta name="description" content="Service Tracker">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Material Design Lite -->
     <script src="//code.getmdl.io/1.1.3/material.min.js"></script>
     <link rel="stylesheet" href="//code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
     <link href="styles/styles.css" rel="stylesheet" />
 
     <!-- Polyfill(s) for older browsers -->
@@ -43,25 +45,24 @@
         <header class="mdl-layout__header mdl-layout__header--transparent">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title"><a class="title-navigation__link"  href="/">Mileage Tracker</a></span>
+                <span class="mdl-layout-title"><a class="title-navigation__link"  href="/">Service Tracker</a></span>
                 <!-- Add spacer, to align navigation to the right -->
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="/mileageLogs">Log</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
+                    <a class="mdl-navigation__link" href="/vehicles"><i class="material-icons">directions_car</i> Vehicles</span></a>
+                    <a class="mdl-navigation__link" href="/mileageLogs"><i class="material-icons">history</i> Log</span></a>
+                    <a class="mdl-navigation__link" href="#"><i class="material-icons">settings</i> Settings</span></a>
                 </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Mileage Tracker</span>
+            <span class="mdl-layout-title">Service Tracker</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/mileageLogs">Log</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="/"><span><i class="material-icons">home</i> Home</span></a>
+                <a class="mdl-navigation__link" href="#"><i class="material-icons">directions_car</i> Vehicles</span></a>
+                <a class="mdl-navigation__link" href="/mileageLogs"><i class="material-icons">history</i> Log</span></a>
+                <a class="mdl-navigation__link" href="#"><i class="material-icons">settings</i> Settings</span></a>
             </nav>
         </div>
 

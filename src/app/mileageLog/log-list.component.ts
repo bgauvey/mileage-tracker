@@ -10,6 +10,7 @@ import { IMilageLog} from '../shared/interfaces';
     moduleId: module.id,
     selector: 'mileage-log',
     templateUrl: 'log-list.component.html',
+    styleUrls: ['log-list.component.css'],
     directives: [ROUTER_DIRECTIVES, FilterTextboxComponent]
 })
 export class LogListComponent implements OnInit {

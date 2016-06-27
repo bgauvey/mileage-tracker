@@ -1,5 +1,5 @@
 <h3>Milage Logs</h3>
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--4dp">
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
     <tr>
       <th class="mdl-data-table__cell--non-numeric">Date</th>
@@ -7,14 +7,25 @@
       <th>Price Per Gal</th>
       <th>Odometer</th>
       <th>Total Cost</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let log of logs" >
+    <tr *ngFor="let log of logs">
       <td class="mdl-data-table__cell--non-numeric">{{log.date}}</td>
       <td>{{log.gallons}}</td>
       <td>{{log.costPerGallon}}</td>
       <td>{{log.odometer}}</td>
       <td>{{log.totalCost}}</td>
+      <td>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--primary">
+          <i class="material-icons">edit</i>
+        </button>
+
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+          <i class="material-icons">delete</i>
+        </button>
+      </td>
+    </tr>
   </tbody>
 </table>
