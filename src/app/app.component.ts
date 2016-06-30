@@ -3,13 +3,13 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { APP_PROVIDERS } from './app.providers';
 
-@Component({ 
+@Component({
   moduleId: module.id,
   selector: 'app-container',
   template: `<router-outlet></router-outlet>`,
   directives: [ROUTER_DIRECTIVES],
-  providers: [ APP_PROVIDERS ]
+  providers: [APP_PROVIDERS]
 })
 export class AppComponent {
-  constructor() {  } 
+  constructor() { }
 }

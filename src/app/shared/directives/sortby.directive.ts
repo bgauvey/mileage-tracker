@@ -7,15 +7,15 @@ import { Directive, Input, Output, EventEmitter } from '@angular/core';
   }
 })
 export class SortByDirective {
-	
-	private sortProperty: string;
-  
+
+  private sortProperty: string;
+
   @Output()
-	sorted: EventEmitter<string> = new EventEmitter<string>();
-	
+  sorted: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() { }
-    
-  @Input('sort-by') 
+
+  @Input('sort-by')
   set sortBy(value: string) {
     this.sortProperty = value;
   }

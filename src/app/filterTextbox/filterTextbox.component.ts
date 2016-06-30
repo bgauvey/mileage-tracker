@@ -15,14 +15,14 @@ import { FORM_DIRECTIVES } from '@angular/common';
 })
 export class FilterTextboxComponent {
 
-  
-    model: { filter: string } = { filter: null };
-    
-    @Output()
-    changed: EventEmitter<string> = new EventEmitter<string>();
 
-    filterChanged(event: any) {
-      event.preventDefault();
-      this.changed.emit(this.model.filter); //Raise changed event
-    }
+  model: { filter: string } = { filter: null };
+
+  @Output()
+  changed: EventEmitter<string> = new EventEmitter<string>();
+
+  filterChanged(event: any) {
+    event.preventDefault();
+    this.changed.emit(this.model.filter); //Raise changed event
+  }
 }

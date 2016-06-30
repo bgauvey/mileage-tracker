@@ -8,8 +8,7 @@ export interface IMilageLog {
     vehicleId: number;
 }
 
-export interface IVehicle
-{
+export interface IVehicle {
     id: number;
     make: string;
     model: string;

@@ -14,6 +14,6 @@ export const APP_PROVIDERS = [
     provide(XHRBackend, { useClass: InMemoryBackendService }),
     provide(SEED_DATA, { useClass: InMemoryService }),
     provide(InMemoryBackendConfig, { useValue: { delay: 600 } }),
-     Sorter,
+    Sorter,
     DataService
 ];

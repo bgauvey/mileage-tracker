@@ -6,22 +6,22 @@ import { DataService } from '../shared/services/data.service';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
 
 @Component({
-  moduleId: module.id,
-  selector: 'log',
-  templateUrl: 'log-detail.component.html',
-  directives: [ ROUTER_DIRECTIVES ],
-  pipes: [ CapitalizePipe ]
+    moduleId: module.id,
+    selector: 'log',
+    templateUrl: 'log-detail.component.html',
+    directives: [ROUTER_DIRECTIVES],
+    pipes: [CapitalizePipe]
 })
 export class LogDetailComponent implements OnInit, OnDestroy {
-  private sub: any;
-  log: IMilageLog;
+    private sub: any;
+    log: IMilageLog;
 
-  constructor(private router: Router, 
-              private route: ActivatedRoute, 
-              private dataService: DataService) { }
+    constructor(private router: Router,
+        private route: ActivatedRoute,
+        private dataService: DataService) { }
 
-  ngOnInit() {
-      this.sub = this.router
+    ngOnInit() {
+        this.sub = this.router
             .routerState
             .queryParams
             .subscribe(params => {
@@ -30,14 +30,14 @@ export class LogDetailComponent implements OnInit, OnDestroy {
                 this.dataService.getLog(id)
                     .subscribe((log: IMilageLog) => this.log = log);
             });
-  }
+    }
 
-  ngOnDestroy() {
-      this.sub.unsubscribe();
-  }
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
 
-  deleteLog() {
-      this.dataService.deleteLog(this.log.id);
-      window.history.back();
-  }
+    deleteLog() {
+        this.dataService.deleteLog(this.log.id);
+        window.history.back();
+    }
 }
