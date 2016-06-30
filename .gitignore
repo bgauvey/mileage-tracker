@@ -7,6 +7,8 @@ npm-debug.log
 .vs
 
 # Build Generated Files
+src/api/**/*.js
+src/api/**/*.js.map
 src/app/**/*.js
 src/app/**/*.js.map
 
