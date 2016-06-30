@@ -16,6 +16,14 @@ export class DataService {
 
     constructor(private http: Http) { }
 
+    createLog(log: IMilageLog) {
+        let body = JSON.stringify(log);
+        return this.http
+            .post(`${milesUrl}`, body)
+            .map(res => res.json().data)
+            .catch(this.handleError)
+    }
+
     getLogs() {
         return this.http.get(milesUrl)
             .map((res: Response) => <IMilageLog[]>res.json().data)
@@ -28,6 +36,14 @@ export class DataService {
             .catch(this.handleError);
     }
 
+    updateLog(log: IMilageLog) {
+        let body = JSON.stringify(log);
+        return this.http
+            .put(`${milesUrl}/${log.id}`, body)
+            .map(res => res.json().data)
+            .catch(this.handleError)
+    }
+
     deleteLog(id: number) {
         return this.http.delete(`${milesUrl}/${id}`)
             .catch(this.handleError)
@@ -36,22 +52,6 @@ export class DataService {
     /////////////////////////////////////////////////////////////////////
     // Private members
     /////////////////////////////////////////////////////////////////////
-    private findLogObservable(id: number): Observable<IMilageLog> {
-        return this.createObservable(this.filterLogs(id));
-    }
-
-    private filterLogs(id: number): IMilageLog {
-        //     const logs = this.logs.filter((log) => log.id === id);
-        //   return (logs.length) ? logs[0] : null;
-        return null;
-    }
-
-    private createObservable(data: any): Observable<any> {
-        return Observable.create((observer: Observer<any>) => {
-            observer.next(data);
-            observer.complete();
-        });
-    }
 
     private handleError(error: any) {
         console.error(error);
