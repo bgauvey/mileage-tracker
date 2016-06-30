@@ -12,11 +12,13 @@ import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
   directives: [ ROUTER_DIRECTIVES ],
   pipes: [ CapitalizePipe ]
 })
-export class LogDetailComponent implements OnInit {
+export class LogDetailComponent implements OnInit, OnDestroy {
   private sub: any;
   log: IMilageLog;
 
-  constructor(private router: Router, private route: ActivatedRoute, private dataService: DataService) { }
+  constructor(private router: Router, 
+              private route: ActivatedRoute, 
+              private dataService: DataService) { }
 
   ngOnInit() {
       this.sub = this.router
@@ -32,5 +34,10 @@ export class LogDetailComponent implements OnInit {
 
   ngOnDestroy() {
       this.sub.unsubscribe();
+  }
+
+  deleteLog() {
+      this.dataService.deleteLog(this.log.id);
+      window.history.back();
   }
 }

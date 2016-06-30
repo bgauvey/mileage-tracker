@@ -6,30 +6,34 @@
     <div class="mdl-card__supporting-text">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">Date</div>
-          <div class="mdl-cell mdl-cell--6-col">{{log.date | date }}</div>
+        <div class="mdl-cell mdl-cell--6-col">{{log.date | date }}</div>
 
-          <div class="mdl-cell mdl-cell--6-col">Odometer</div>
-          <div class="mdl-cell mdl-cell--6-col">{{log.odometer | number }} Miles</div>
-          
-          <div class="mdl-cell mdl-cell--6-col">Quantity</div>
-          <div class="mdl-cell mdl-cell--6-col">{{log.gallons}} Gallons</div>
-            
-          <div class="mdl-cell mdl-cell--6-col">Cost per Unit</div>
-          <div class="mdl-cell mdl-cell--6-col">{{log.costPerGallon | currency:'USD':true}} </div>
-          
-          <div class="mdl-cell mdl-cell--6-col">Total Cost</div>
-          <div class="mdl-cell mdl-cell--6-col">{{log.totalCost | currency:'USD':true }} </div>
+        <div class="mdl-cell mdl-cell--6-col">Odometer</div>
+        <div class="mdl-cell mdl-cell--6-col">{{log.odometer | number }} Miles</div>
+
+        <div class="mdl-cell mdl-cell--6-col">Quantity</div>
+        <div class="mdl-cell mdl-cell--6-col">{{log.gallons}} Gallons</div>
+
+        <div class="mdl-cell mdl-cell--6-col">Cost per Unit</div>
+        <div class="mdl-cell mdl-cell--6-col">{{log.costPerGallon | currency:'USD':true}} </div>
+
+        <div class="mdl-cell mdl-cell--6-col">Total Cost</div>
+        <div class="mdl-cell mdl-cell--6-col">{{log.totalCost | currency:'USD':true }} </div>
       </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">edit</i> Edit
-    </a>
-    <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">delete</i> Delete
-    </a>
+        <i class="material-icons">edit</i> Edit
+      </a>
+      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="deleteLog()">
+        <i class="material-icons">delete</i> Delete
+      </a>
     </div>
   </div>
   <div *ngIf="!log" class="row">
     No log record found
+  </div>
+  <div id="delete-prompt" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
   </div>

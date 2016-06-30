@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
         this.dataService.getLogs()
             .subscribe((logs: IMilageLog[]) => {
-                this.logs = logs.slice(1, 5);
+                this.logs = logs;
             });
     }
 
