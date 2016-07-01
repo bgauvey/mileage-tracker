@@ -6,13 +6,13 @@ import {Observer} from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { IMilageLog } from '../interfaces';
-import { CONFIG } from '../config'
+import { IMilageLog } from './mileage-log';
+import { CONFIG } from '../shared/config'
 
 let milesUrl = CONFIG.baseUrls.miles;
 
 @Injectable()
-export class DataService {
+export class MileageLogService {
 
     constructor(private http: Http) { }
 

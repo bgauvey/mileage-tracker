@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 //import { Observable } from 'rxjs/Observable';
 
-import { DataService } from '../shared/services/data.service';
+import { MileageLogService } from './mileage-log.service';
 import { FilterTextboxComponent } from '../filterTextbox/filterTextbox.component';
-import { IMilageLog} from '../shared/interfaces';
+import { IMilageLog} from './mileage-log';
 
 @Component({
     moduleId: module.id,
@@ -20,13 +20,13 @@ export class LogListComponent implements OnInit {
     logs: IMilageLog[] = [];
     filteredLogs: IMilageLog[] = [];
 
-    constructor(private dataService: DataService) { }
+    constructor(private _service: MileageLogService) { }
 
     ngOnInit() {
         this.title = 'Mileage Log';
         this.filterText = 'Filter Entries:';
 
-        this.dataService.getLogs()
+        this._service.getLogs()
             .subscribe((logs: IMilageLog[]) => {
                 this.logs = this.filteredLogs = logs;
             });

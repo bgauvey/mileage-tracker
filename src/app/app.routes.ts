@@ -1,7 +1,7 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
 import { DashboardRoutes } from './dashboard/dashboard.routes';
-import { MileageLogRoutes } from './mileageLog/mileageLog.routes';
+import { MileageLogRoutes } from './mileageLog/mileage-log.routes';
 
 const appRoutes: RouterConfig = [
   ...DashboardRoutes,

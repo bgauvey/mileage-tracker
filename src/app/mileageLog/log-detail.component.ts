@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { IMilageLog } from '../shared/interfaces';
-import { DataService } from '../shared/services/data.service';
+import { IMilageLog } from './mileage-log';
+import { MileageLogService } from './mileage-log.service';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
 
 @Component({
@@ -18,7 +18,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
 
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private dataService: DataService) { }
+        private _service: MileageLogService) { }
 
     ngOnInit() {
         this.sub = this.router
@@ -27,7 +27,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
             .subscribe(params => {
                 console.info(params['id']);
                 let id = +params['id']; // (+) converts string 'id' to a number
-                this.dataService.getLog(id)
+                this._service.getLog(id)
                     .subscribe((log: IMilageLog) => this.log = log);
             });
     }
@@ -37,7 +37,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     }
 
     deleteLog() {
-        this.dataService.deleteLog(this.log.id);
+        this._service.deleteLog(this.log.id);
         window.history.back();
     }
 }

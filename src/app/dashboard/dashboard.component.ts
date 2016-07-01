@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { DataService } from '../shared/services/data.service';
-import { IMilageLog} from '../shared/interfaces';
+import { MileageLogService } from '../mileageLog/mileage-log.service';
+import { IMilageLog} from '../mileageLog/mileage-log';
 
 @Component({
     selector: 'my-dashboard',
@@ -15,11 +15,11 @@ export class DashboardComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private dataService: DataService) {
+        private _service: MileageLogService) {
     }
 
     ngOnInit() {
-        this.dataService.getLogs()
+        this._service.getLogs()
             .subscribe((logs: IMilageLog[]) => {
                 this.logs = logs;
             });

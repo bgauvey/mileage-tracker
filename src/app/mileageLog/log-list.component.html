@@ -3,26 +3,25 @@
   <thead>
     <tr>
       <th class="mdl-data-table__cell--non-numeric">Date</th>
-      <th>Gallons</th>
-      <th>Price Per Gal</th>
       <th>Odometer</th>
+      <th>Quantity</th>
+      <th>Cpst per Unit</th>
       <th>Total Cost</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let log of logs">
-      <td class="mdl-data-table__cell--non-numeric">{{log.date}}</td>
-      <td>{{log.gallons}}</td>
-      <td>{{log.costPerGallon}}</td>
-      <td>{{log.odometer}}</td>
-      <td>{{log.totalCost}}</td>
+      <td class="mdl-data-table__cell--non-numeric">{{ log.date | date }}</td>
+      <td>{{ log.odometer | number }} Miles</td>
+      <td>{{ log.gallons}} Gallons</td>
+      <td>{{ log.costPerGallon | currency:"USD":true }}</td>
+      <td>{{ log.totalCost | currency:"USD":true }}</td>
       <td>
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--primary">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--primary" (click)="OnEdit()">
           <i class="material-icons">edit</i>
         </button>
-
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent">
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--accent" (click)="OnDelete()">
           <i class="material-icons">delete</i>
         </button>
       </td>
