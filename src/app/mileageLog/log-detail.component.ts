@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs/Rx';
 
 import { IMilageLog } from './mileage-log';
@@ -27,7 +28,8 @@ export class LogDetailComponent implements OnInit, OnDestroy {
         private _service: MileageLogService,
         private _toastService: ToastService,
         private _modalService: ModalService,
-        private _entityService: EntityService) { }
+        private _entityService: EntityService,
+        private _location: Location) { }
 
     ngOnInit() {
         componentHandler.upgradeDom();
@@ -35,14 +37,15 @@ export class LogDetailComponent implements OnInit, OnDestroy {
             .routerState
             .queryParams
             .subscribe(params => {
-                //console.info(params['id']);
-                let id = +params['id']; // (+) converts string 'id' to a number
-                this._service.getLog(id)
-                    .subscribe((log: IMilageLog) => this.log = log,
-                    (error) => {
-                        this._toastService.activate(`${error}`);
-                        return Observable.of();
-                    });
+                if (params['id'] != null) {
+                    let id = +params['id']; // (+) converts string 'id' to a number
+                    this._service.getLog(id)
+                        .subscribe((log: IMilageLog) => this.log = log,
+                        (error) => {
+                            this._toastService.activate(`${error}`);
+                            return Observable.of();
+                        });
+                }
             });
     }
 
@@ -70,6 +73,6 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     }
 
     private _gotoLogs() {
-        this.router.navigate(['/mileageLogs']);
+        this._location.back();
     }
 }
