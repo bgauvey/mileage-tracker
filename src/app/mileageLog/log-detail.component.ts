@@ -35,7 +35,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
             .routerState
             .queryParams
             .subscribe(params => {
-                console.info(params['id']);
+                //console.info(params['id']);
                 let id = +params['id']; // (+) converts string 'id' to a number
                 this._service.getLog(id)
                     .subscribe((log: IMilageLog) => this.log = log,
@@ -57,7 +57,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
                 this.cancel(false);
                 this._service.deleteLog(this.log.id);
                 this._toastService.activate('Log successully deleted.', 'Mileage Log');
-                window.history.back();
+                this._gotoLogs();
             }
         });
     }
@@ -67,5 +67,9 @@ export class LogDetailComponent implements OnInit, OnDestroy {
         if (showToast) {
             this._toastService.activate(`Cancelled changes to entry`);
         }
+    }
+
+    private _gotoLogs() {
+        this.router.navigate(['/mileageLogs']);
     }
 }
