@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Rx';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
+declare var componentHandler: any;
 const ACTIVE_CLASS = 'is-active';
 
 @Component({
@@ -19,12 +20,11 @@ export class SpinnerComponent implements OnDestroy, OnInit {
   visible = false;
 
   private _spinnerStateChanged: Subscription;
-  private componentHandler: any;
 
   constructor(private _spinnerService: SpinnerService) { }
 
   ngOnInit() {
-    this.componentHandler.upgradeDom();
+    componentHandler.upgradeDom();
     this._spinnerStateChanged = this._spinnerService.spinnerState
       .subscribe((state: ISpinnerState) => this.visible = state.show);
   }

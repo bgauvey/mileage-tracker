@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+declare var componentHandler: any;
 
 @Component({
   selector: 'filter-text',
@@ -8,11 +9,11 @@ export class FilterTextComponent {
   @Output() changed: EventEmitter<string>;
   filter: string;
   
-  componentHandler: any;
+  
   constructor() {
     this.changed = new EventEmitter<string>(true);
 
-    this.componentHandler.upgradeDom();
+    componentHandler.upgradeDom();
   }
 
   clear() {
