@@ -1,11 +1,3 @@
-<!--
-   Angular 2 JumpStart
-   Dan Wahlin
-
-   @DanWahlin
-   http://weblogs.asp.net/dwahlin
-   http://github.com/danwahlin
--->
 <!DOCTYPE html>
 <html>
 
@@ -18,21 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Material Design Lite -->
-    <script src="//code.getmdl.io/1.1.3/material.min.js"></script>
-    <link rel="stylesheet" href="//code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+    <script src="./app/assets/material.min.js"></script>
+    <link rel="stylesheet" href="./app/assets/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="./app/assets/material-grid.min.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
     <link href="styles/styles.css" rel="stylesheet" />
 
+    <!-- remove for bundle usage -->
     <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
-
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <!-- remove for bundle usage -->
     <script src="systemjs.config.js"></script>
     <script>
 		System.import('app').catch(function(err){ console.error(err); });
@@ -41,44 +33,8 @@
 </head>
 
 <body>
-    <div class="mileage-tracker-layout-transparent mdl-layout mdl-js-layout">
-        <header class="mdl-layout__header mdl-layout__header--transparent">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <span class="mdl-layout-title"><a class="title-navigation__link"  href="/">Service Tracker</a></span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation -->
-                <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="/vehicles"><i class="material-icons">directions_car</i> Vehicles</span></a>
-                    <a class="mdl-navigation__link" href="/mileageLogs"><i class="material-icons">history</i> Log</span></a>
-                    <a class="mdl-navigation__link" href="#"><i class="material-icons">settings</i> Settings</span></a>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Service Tracker</span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/"><span><i class="material-icons">home</i> Home</span></a>
-                <a class="mdl-navigation__link" href="#"><i class="material-icons">directions_car</i> Vehicles</span></a>
-                <a class="mdl-navigation__link" href="/mileageLogs"><i class="material-icons">history</i> Log</span></a>
-                <a class="mdl-navigation__link" href="#"><i class="material-icons">settings</i> Settings</span></a>
-            </nav>
-        </div>
+    <app-container>Loading...</app-container>
 
-        <main class="mdl-layout__content">
-            <app-container>
-                Loading...
-            </app-container>
-            <br /><br />
-        </main>
-
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                Created by <a href="http://twitter.com/bgauvey" target="_blank">Bill Gauvey</a>
-            </div>
-        </footer>
-    </div>
     <!-- add for bundle usage -->
     <!-- <script src="dist/bundle.min.js"></script> -->
     <!-- add for bundle usage -->

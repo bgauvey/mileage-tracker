@@ -6,7 +6,7 @@ import { ISpinnerState, SpinnerService } from './spinner.service';
 const ACTIVE_CLASS = 'is-active';
 
 @Component({
-  selector: 'story-spinner',
+  selector: 'spinner',
   template: `
     <div
       class="spinner mdl-spinner mdl-js-spinner mdl-spinner--single-color"

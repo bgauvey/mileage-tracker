@@ -6,7 +6,7 @@ import { APP_PROVIDERS } from './app.providers';
 @Component({
   moduleId: module.id,
   selector: 'app-container',
-  template: `<router-outlet></router-outlet>`,
+  templateUrl: 'app.component.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [APP_PROVIDERS]
 })
