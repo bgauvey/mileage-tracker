@@ -11,7 +11,3 @@ src/api/**/*.js
 src/api/**/*.js.map
 src/app/**/*.js
 src/app/**/*.js.map
-
-# VS Code
-.vscode
-
