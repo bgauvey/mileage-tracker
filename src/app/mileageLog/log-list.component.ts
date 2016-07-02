@@ -3,7 +3,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 //import { Observable } from 'rxjs/Observable';
 
 import { MileageLogService } from './mileage-log.service';
-import { FilterTextboxComponent } from '../filterTextbox/filterTextbox.component';
+import { FilterTextComponent } from '../blocks/filter-text/filter-text.component';
 import { IMilageLog} from './mileage-log';
 
 @Component({
@@ -11,7 +11,7 @@ import { IMilageLog} from './mileage-log';
     selector: 'mileage-log',
     templateUrl: 'log-list.component.html',
     styleUrls: ['log-list.component.css'],
-    directives: [ROUTER_DIRECTIVES, FilterTextboxComponent]
+    directives: [ROUTER_DIRECTIVES, FilterTextComponent]
 })
 export class LogListComponent implements OnInit {
 

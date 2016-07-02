@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { IMilageLog } from './mileage-log';
 import { MileageLogService } from './mileage-log.service';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
+import { ToastService } from '../blocks/toast/toast.service';
 
 @Component({
     moduleId: module.id,
@@ -18,7 +19,8 @@ export class LogDetailComponent implements OnInit, OnDestroy {
 
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private _service: MileageLogService) { }
+        private _service: MileageLogService,
+        private _toast: ToastService) { }
 
     ngOnInit() {
         this.sub = this.router
@@ -37,7 +39,9 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     }
 
     deleteLog() {
+        let msg = 'Record successfully deleted';
         this._service.deleteLog(this.log.id);
+        this._toast.activate(msg, 'Mileage Log');
         window.history.back();
     }
 }
