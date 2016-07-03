@@ -35,3 +35,6 @@ h3 {
      your background is light. */
   color: white;
 }
+.not-displayed {
+  display: none;
+}

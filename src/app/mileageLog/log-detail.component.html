@@ -1,4 +1,4 @@
-<div *ngIf="log">
+<div *ngIf="editLog">
   <div class="mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text">Fuel Purchase</h2>
@@ -6,40 +6,34 @@
     <div class="mdl-card__supporting-text">
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">Date</div>
-        <div class="mdl-cell mdl-cell--6-col">{{log.date | date }}</div>
+        <div class="mdl-cell mdl-cell--6-col">{{editLog.date | date }}</div>
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" [(ngModel)]="log.odometer" pattern="-?[0-9]*(\.[0-9]+)?" id="odometer">
+          <input class="mdl-textfield__input" type="text" [(ngModel)]="editLog.odometer" pattern="-?[0-9]*(\.[0-9]+)?" id="odometer">
           <label class="mdl-textfield__label" for="odometer">Odometer (miles)</label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
 
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" [(ngModel)]="log.gallons" pattern="-?[0-9]*(\.[0-9]+)?" id="gallons">
+          <input class="mdl-textfield__input" type="text" [(ngModel)]="editLog.gallons" pattern="-?[0-9]*(\.[0-9]+)?" id="gallons">
           <label class="mdl-textfield__label" for="gallons">Quantity (gallons)</label>
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
 
         <div class="mdl-cell mdl-cell--6-col">Cost per Unit</div>
-        <div class="mdl-cell mdl-cell--6-col">{{log.costPerGallon | currency:'USD':true}} </div>
+        <div class="mdl-cell mdl-cell--6-col">{{editLog.costPerGallon | currency:'USD':true}} </div>
 
         <div class="mdl-cell mdl-cell--6-col">Total Cost</div>
-        <div class="mdl-cell mdl-cell--6-col">{{log.totalCost | currency:'USD':true }} </div>
+        <div class="mdl-cell mdl-cell--6-col">{{editLog.totalCost | currency:'USD':true }} </div>
       </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">edit</i> Save
-      </a>
-      <a class="mdl-button mdl-button-primary mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">edit</i> Cancel
-      </a>
-      <a class="mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="deleteLog()">
-        <i class="material-icons">delete</i> Delete
-      </a>
+      <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="save()"> Save </button>&nbsp;
+      <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" (click)="cancel()" [class.not-displayed]="isAddMode()"> Cancel </button>&nbsp;
+      <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" (click)="deleteLog()" [class.not-displayed]="isAddMode()"> Delete </button>
     </div>
   </div>
 </div>
-<div *ngIf="!log" class="row">
+<div *ngIf="!editLog" class="row">
   No log record found
 </div>

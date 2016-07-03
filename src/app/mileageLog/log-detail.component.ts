@@ -36,25 +36,39 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        
+        var id: number;
         this.sub = this.router
             .routerState
             .queryParams
             .subscribe(params => {
                 if (params['id'] != null) {
-                    let id = +params['id']; // (+) converts string 'id' to a number
-                    this._service.getLog(id)
-                        .subscribe((log: IMilageLog) => this.log = log,
-                        (error) => {
-                            this._toastService.activate(`${error}`);
-                            return Observable.of();
-                        });
+                    id = +params['id']; // (+) converts string 'id' to a number
                 }
             });
+        this._getLog(id);
     }
 
     ngOnDestroy() {
         this.sub.unsubscribe();
+    }
+
+    isAddMode() {
+        return this.editLog == null;
+    }
+
+    save() {
+        let log = this.log = this._entityService.merge(this.log, this.editLog);
+        if (log.id == null) {
+            this._service.createLog(log)
+                .subscribe(l => {
+                    this._setEditLog(l);
+                    this._toastService.activate(`Successfully added entry`);
+                    this._gotoLogs();
+                });
+            return;
+        }
+        this._service.updateLog(this.log)
+            .subscribe(() => this._toastService.activate(`Successfully saved entry`));
     }
 
     deleteLog() {
@@ -62,8 +76,8 @@ export class LogDetailComponent implements OnInit, OnDestroy {
         this._modalService.activate(msg).then(responseOK => {
             if (responseOK) {
                 this.cancel(false);
-                this._service.deleteLog(this.log.id);
-                this._toastService.activate('Log successully deleted.', 'Mileage Log');
+                this._service.deleteLog(this.editLog.id);
+                this._toastService.activate(`Log successully deleted.`, `Mileage Log`);
                 this._gotoLogs();
             }
         });
@@ -79,4 +93,31 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     private _gotoLogs() {
         this._location.back();
     }
+
+    private _setEditLog(log: IMilageLog) {
+        if (log) {
+            this.log = log;
+            this.editLog = this._entityService.clone(this.log);
+        } else {
+            this._gotoLogs();
+        }
+    }
+
+
+    private _getLog(id: number) {
+        if (id === 0) return;
+        if (this.isAddMode()) {
+            this.log = <IMilageLog>{ date: new Date() };
+            this.editLog = this._entityService.clone(this.log);
+            return;
+        }
+        this._service.getLog(id)
+            .subscribe((log: IMilageLog) => this._setEditLog(log),
+            (error) => {
+                this._toastService.activate(`${error}`);
+                return Observable.of();
+            });
+    }
+
+
 }

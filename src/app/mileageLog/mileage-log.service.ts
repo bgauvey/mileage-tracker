@@ -40,7 +40,7 @@ export class MileageLogService {
         let body = JSON.stringify(log);
         return this.http
             .put(`${milesUrl}/${log.id}`, body)
-            .map(res => res.json().data)
+            .map(res => res.json())
             .catch(this.handleError)
     }
 
