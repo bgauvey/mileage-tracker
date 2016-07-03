@@ -4,7 +4,7 @@ import { FORM_PROVIDERS, LocationStrategy, HashLocationStrategy } from '@angular
 
 import { Sorter } from './shared/utils/sorter';
 import { MileageLogService } from './mileageLog/mileage-log.service';
-import { EntityService, ExceptionService, ModalService, SpinnerService, ToastService } from './blocks/blocks';
+import { EntityService, ExceptionService, FilterService, ModalService, SpinnerService, ToastService } from './blocks/blocks';
 
 import { InMemoryBackendConfig, InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
 import { InMemoryService } from '../api/in-memory.service';
@@ -19,6 +19,7 @@ export const APP_PROVIDERS = [
     MileageLogService,
     EntityService,
     ExceptionService,
+    FilterService,
     ModalService,
     SpinnerService,
     ToastService

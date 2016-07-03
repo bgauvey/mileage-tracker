@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, AfterViewChecked } from '@angular/core';
 declare var componentHandler: any;
 
 @Component({
@@ -8,11 +8,13 @@ declare var componentHandler: any;
 export class FilterTextComponent {
   @Output() changed: EventEmitter<string>;
   filter: string;
-  
-  
+
+
   constructor() {
     this.changed = new EventEmitter<string>(true);
+  }
 
+  ngAfterViewChecked() {
     componentHandler.upgradeDom();
   }
 
