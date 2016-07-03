@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 //import { Observable } from 'rxjs/Observable';
 
 import { MileageLogService } from './mileage-log.service';
@@ -7,28 +7,33 @@ import { FilterTextComponent, FilterService } from '../blocks/filter-text/filter
 import { IMilageLog} from './mileage-log';
 
 @Component({
-    moduleId: module.id,
-    selector: 'mileage-log',
-    templateUrl: 'log-list.component.html',
-    styleUrls: ['log-list.component.css'],
-    directives: [ROUTER_DIRECTIVES, FilterTextComponent]
+  moduleId: module.id,
+  selector: 'mileage-log',
+  templateUrl: 'log-list.component.html',
+  styleUrls: ['log-list.component.css'],
+  directives: [ROUTER_DIRECTIVES, FilterTextComponent]
 })
 export class LogListComponent implements OnInit {
 
-    title: string;
-    logs: IMilageLog[] = [];
-    filteredLogs: IMilageLog[] = [];
-    @ViewChild(FilterTextComponent) filterComponent: FilterTextComponent;
+  title: string;
+  logs: IMilageLog[] = [];
+  filteredLogs: IMilageLog[] = [];
+  @ViewChild(FilterTextComponent) filterComponent: FilterTextComponent;
 
-    constructor(private _filterService: FilterService,
-                private _service: MileageLogService) { }
+  constructor(private router: Router,
+    private _filterService: FilterService,
+    private _service: MileageLogService) { }
 
-    ngOnInit() {
-        this.title = 'Mileage Log';
+  ngOnInit() {
+    this.title = 'Mileage Log';
 
-        this.getVehicles();
-    }
+    this.getVehicles();
+  }
 
+  addNew() {
+    this.router.navigate(['/mileageLog'], { queryParams: { id: 'new' } });
+  }
+  
   getVehicles() {
     this.logs = [];
     this._service.getLogs()
@@ -38,8 +43,8 @@ export class LogListComponent implements OnInit {
       });
   }
 
-    filterChanged(searchText: string) {
-      this.filteredLogs = this._filterService.filter(searchText, ['id', 'date', 'odometer'], this.logs);
-    }
+  filterChanged(searchText: string) {
+    this.filteredLogs = this._filterService.filter(searchText, ['id', 'date', 'odometer'], this.logs);
+  }
 
 }

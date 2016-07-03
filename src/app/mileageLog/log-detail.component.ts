@@ -53,7 +53,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     }
 
     isAddMode() {
-        return this.editLog == null;
+        return this.editLog.id == null;
     }
 
     save() {

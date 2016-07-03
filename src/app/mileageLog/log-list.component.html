@@ -1,7 +1,7 @@
 <article>
   <h3>Milage Logs</h3>
 
-  <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" [routerLink]="['/mileageLog', {id: 'new'}]">Add</a>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect" (click)="addNew()">Add</button>
 
   <filter-text (changed)="filterChanged($event)"></filter-text>
 
