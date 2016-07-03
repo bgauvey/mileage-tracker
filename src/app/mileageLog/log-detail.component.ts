@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs/Rx';
@@ -31,8 +31,12 @@ export class LogDetailComponent implements OnInit, OnDestroy {
         private _entityService: EntityService,
         private _location: Location) { }
 
-    ngOnInit() {
+    ngAfterViewChecked() {
         componentHandler.upgradeDom();
+    }
+
+    ngOnInit() {
+        
         this.sub = this.router
             .routerState
             .queryParams
