@@ -13,7 +13,9 @@
         "**/api/**/*.js.map": true,
         // Exclude declaration files files
         "**/app/**/*.d.ts": true,
-        "**/api/**/*.d.ts": true
+        "**/api/**/*.d.ts": true,
+        // npm error logs
+        "**/npm-debug.log*.*": true
     },
     "search.exclude": {
         "**/node_modules": true,

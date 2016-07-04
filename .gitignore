@@ -11,3 +11,6 @@ src/api/**/*.js
 src/api/**/*.js.map
 src/app/**/*.js
 src/app/**/*.js.map
+
+# npm error logs
+**/npm-debug.log*.*
