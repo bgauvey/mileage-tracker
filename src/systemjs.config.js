@@ -1,4 +1,4 @@
-(function(global) {
+(function (global) {
 
   // map tells the System loader where to look for things
   var map = {
@@ -6,12 +6,13 @@
     'api':                        'api',
     'rxjs':                       'node_modules/rxjs',
     '@angular':                   'node_modules/@angular',
-    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api'
+    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+    '@angular2-material':         'node_modules/@angular2-material'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app':                        { main: 'main.js',  defaultExtension: 'js' },
+    'app':                        { main: 'main.js', defaultExtension: 'js' },
     'api':                        { defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' }
@@ -32,8 +33,20 @@
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
-  packageNames.forEach(function(pkgName) {
+  packageNames.forEach(function (pkgName) {
     packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
+  });
+
+  // put the names of any of your Material components here
+  var materialPkgs = [
+    'core',
+    'button',
+    'card',
+    'icon'
+  ];
+
+  materialPkgs.forEach((pkg) => {
+    packages[`@angular2-material/${pkg}`] = { main: `${pkg}.js` };
   });
 
   var config = {

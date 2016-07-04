@@ -1,6 +1,7 @@
 import { bind, provide } from '@angular/core';
 import { HTTP_PROVIDERS, XHRBackend } from '@angular/http';
 import { FORM_PROVIDERS, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { MdIconRegistry } from '@angular2-material/icon';
 
 import { Sorter } from './shared/utils/sorter';
 import { MileageLogService } from './mileageLog/mileage-log.service';
@@ -22,5 +23,6 @@ export const APP_PROVIDERS = [
     FilterService,
     ModalService,
     SpinnerService,
-    ToastService
+    ToastService,
+    MdIconRegistry
 ];
