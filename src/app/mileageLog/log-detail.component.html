@@ -1,38 +1,23 @@
 <div *ngIf="editLog">
-  <div class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text">Fuel Purchase</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--6-col">Date</div>
-        <div class="mdl-cell mdl-cell--6-col">{{editLog.date | date }}</div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" [(ngModel)]="editLog.odometer" pattern="-?[0-9]*(\.[0-9]+)?" id="odometer">
-          <label class="mdl-textfield__label" for="odometer">Odometer (miles)</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" [(ngModel)]="editLog.gallons" pattern="-?[0-9]*(\.[0-9]+)?" id="gallons">
-          <label class="mdl-textfield__label" for="gallons">Quantity (gallons)</label>
-          <span class="mdl-textfield__error">Input is not a number!</span>
-        </div>
-
-        <div class="mdl-cell mdl-cell--6-col">Cost per Unit</div>
-        <div class="mdl-cell mdl-cell--6-col">{{editLog.costPerGallon | currency:'USD':true}} </div>
-
-        <div class="mdl-cell mdl-cell--6-col">Total Cost</div>
-        <div class="mdl-cell mdl-cell--6-col">{{editLog.totalCost | currency:'USD':true }} </div>
-      </div>
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <button class="mdl-button mdl-button--raised mdl-button--accent mdl-js-button mdl-js-ripple-effect" (click)="save()"> Save </button>&nbsp;
-      <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" (click)="cancel()" [class.not-displayed]="isAddMode()"> Cancel </button>&nbsp;
-      <button class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" (click)="deleteLog()" [class.not-displayed]="isAddMode()"> Delete </button>
-    </div>
-  </div>
+  <md-card>
+    <md-card-title>
+      Fuel Purchase
+    </md-card-title>
+    <md-card-content class="secondary">
+      <form #f="ngForm">
+        <md-input placeholder="Date" name="date" [(ngModel)]="editLog.date"></md-input>
+        <md-input placeholder="Odometer (Miles)" name="odometer" [(ngModel)]="editLog.odometer"></md-input>
+        <md-input placeholder="Quantity (gallons)" name="gallons" [(ngModel)]="editLog.gallons"></md-input>
+        <md-input placeholder="Cost per Unit (USD)" name="costPerGallon" [(ngModel)]="editLog.costPerGallon"></md-input>
+        <md-input placeholder="Total Cost (USD)" name="totalCost" [(ngModel)]="editLog.totalCost"></md-input>
+      </form>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-raised-button color="accent" (click)="save()"> Save </button>&nbsp;
+      <button md-raised-button (click)="cancel()" [class.not-displayed]="isAddMode()"> Cancel </button>&nbsp;
+      <button md-raised-button (click)="deleteLog()" [class.not-displayed]="isAddMode()"> Delete </button>
+    </md-card-actions>
+  </md-card>
 </div>
 <div *ngIf="!editLog" class="row">
   No log record found

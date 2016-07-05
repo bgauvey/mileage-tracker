@@ -1,8 +1,11 @@
-.row .column{
-   float:left;
-   width: 100px;
-   float: left;
+.secondary {
+    color: rgba(0,0,0,0.54);
 }
-.row .column.first{
-    clear: left;   
+
+md-card {
+    margin: 16px;
+}
+
+md-input {
+    width: 100%;
 }
