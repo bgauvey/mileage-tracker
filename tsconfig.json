@@ -14,5 +14,8 @@
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
+  ],
+  "files": [
+    "node_modules/angularfire2/firebase3.d.ts"
   ]
 }

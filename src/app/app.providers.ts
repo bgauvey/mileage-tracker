@@ -10,6 +10,8 @@ import { EntityService, ExceptionService, FilterService, ModalService, SpinnerSe
 import { InMemoryBackendConfig, InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
 import { InMemoryService } from '../api/in-memory.service';
 
+import {FIREBASE_PROVIDERS, defaultFirebase, FirebaseAppConfig} from 'angularfire2';
+
 export const APP_PROVIDERS = [
     FORM_PROVIDERS,
     HTTP_PROVIDERS,
@@ -24,5 +26,12 @@ export const APP_PROVIDERS = [
     ModalService,
     SpinnerService,
     ToastService,
-    MdIconRegistry
+    MdIconRegistry,
+    FIREBASE_PROVIDERS,
+    defaultFirebase({
+        apiKey: "<your-key>",
+        authDomain: "<your-project-authdomain>",
+        databaseURL: "https://mileage-tracker-1aad1.firebaseio.com",
+        storageBucket: "<your-storage-bucket>",
+    })
 ];
