@@ -5,6 +5,7 @@ import { MileageLogService } from '../mileageLog/mileage-log.service';
 import { IMilageLog} from '../mileageLog/mileage-log';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-dashboard',
     templateUrl: 'app/dashboard/dashboard.component.html',
     styleUrls: ['app/dashboard/dashboard.component.css']

@@ -45,7 +45,11 @@
     'core',
     'button',
     'card',
-    'icon'
+    'icon',
+    'input',
+    'toolbar',
+    'sidenav',
+    'list'
   ];
 
   materialPkgs.forEach((pkg) => {

@@ -3,6 +3,10 @@ import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs/Rx';
 
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MdInput } from '@angular2-material/input';
+
 import { IMilageLog } from './mileage-log';
 import { MileageLogService } from './mileage-log.service';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
@@ -14,7 +18,7 @@ declare var componentHandler: any;
     moduleId: module.id,
     selector: 'log',
     templateUrl: 'log-detail.component.html',
-    directives: [ROUTER_DIRECTIVES],
+    directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, ROUTER_DIRECTIVES],
     pipes: [CapitalizePipe]
 })
 export class LogDetailComponent implements OnInit, OnDestroy {
@@ -105,8 +109,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
 
 
     private _getLog(id: number) {
-        if (id === 0) return;
-        if (this.isAddMode()) {
+        if (isNaN(id) || id === 0) {
             this.log = <IMilageLog>{ date: new Date() };
             this.editLog = this._entityService.clone(this.log);
             return;
