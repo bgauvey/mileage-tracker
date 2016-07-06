@@ -29,9 +29,9 @@ export const APP_PROVIDERS = [
     MdIconRegistry,
     FIREBASE_PROVIDERS,
     defaultFirebase({
-        apiKey: "<your-key>",
-        authDomain: "<your-project-authdomain>",
+        apiKey: "AIzaSyBEfCeCg9RJtibHNnQ1ilNWHHSpmQglIaE",
+        authDomain: "mileage-tracker-1aad1.firebaseapp.com",
         databaseURL: "https://mileage-tracker-1aad1.firebaseio.com",
-        storageBucket: "<your-storage-bucket>",
+        storageBucket: "mileage-tracker-1aad1.appspot.com",
     })
 ];
