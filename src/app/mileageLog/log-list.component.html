@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let log of filteredLogs">
+      <tr *ngFor="let log of logs">
         <td class="mdl-data-table__cell--non-numeric">{{ log.date | date }}</td>
         <td>{{ log.odometer | number }} Miles</td>
         <td>{{ log.gallons}} Gallons</td>

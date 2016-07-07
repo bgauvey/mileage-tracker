@@ -6,6 +6,8 @@ import { MileageLogService } from './mileage-log.service';
 import { FilterTextComponent, FilterService } from '../blocks/filter-text/filter-text';
 import { IMilageLog} from './mileage-log';
 
+import {AngularFire, FirebaseListObservable} from 'angularfire2';
+
 @Component({
   moduleId: module.id,
   selector: 'mileage-log',
@@ -18,33 +20,24 @@ export class LogListComponent implements OnInit {
   title: string;
   logs: IMilageLog[] = [];
   filteredLogs: IMilageLog[] = [];
-  @ViewChild(FilterTextComponent) filterComponent: FilterTextComponent;
 
   constructor(private router: Router,
     private _filterService: FilterService,
-    private _service: MileageLogService) { }
+    private angularFire: AngularFire) { }
 
   ngOnInit() {
     this.title = 'Mileage Log';
-
-    this.getVehicles();
+    this.angularFire.database.list('/miles')
+      .subscribe(logs => {
+        this.logs = logs;
+      });
   }
 
   addNew() {
     this.router.navigate(['/mileageLog'], { queryParams: { id: 'new' } });
   }
-  
-  getVehicles() {
-    this.logs = [];
-    this._service.getLogs()
-      .subscribe(logs => {
-        this.logs = this.filteredLogs = logs;
-        this.filterComponent.clear();
-      });
-  }
 
   filterChanged(searchText: string) {
     this.filteredLogs = this._filterService.filter(searchText, ['id', 'date', 'odometer'], this.logs);
   }
-
 }
