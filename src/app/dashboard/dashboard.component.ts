@@ -7,8 +7,8 @@ import { IMilageLog} from '../mileageLog/mileage-log';
 @Component({
     moduleId: module.id,
     selector: 'my-dashboard',
-    templateUrl: 'app/dashboard/dashboard.component.html',
-    styleUrls: ['app/dashboard/dashboard.component.css']
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
