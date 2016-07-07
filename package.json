@@ -22,7 +22,7 @@
     "@angular/http": "2.0.0-rc.3",
     "@angular/platform-browser": "2.0.0-rc.3",
     "@angular/platform-browser-dynamic": "2.0.0-rc.3",
-    "@angular/router": "3.0.0-alpha.7",
+    "@angular/router": "v3.0.0-alpha.8",
     "@angular2-material/button": "^2.0.0-alpha.6",
     "@angular2-material/card": "^2.0.0-alpha.6",
     "@angular2-material/core": "^2.0.0-alpha.6",
