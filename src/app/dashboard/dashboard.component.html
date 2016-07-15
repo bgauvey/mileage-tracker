@@ -1,8 +1,18 @@
 <h3>Latest Entries</h3>
-<div class="grid grid-pad">
-  <div *ngFor="let log of logs" (click)="gotoDetail(log)" class="col-1-4">
-    <div class="module log">
-      <h4>{{log.date}}</h4>
-    </div>
-  </div>
+<div class="card-container">
+  <md-card *ngFor="let log of logs | async">
+    <md-card-title>
+      <img src="./app/assets/receipt.png" height="48"/>
+        <md-card-title-text align="end">
+          {{ getTypeString(log.logType) }}
+        </md-card-title-text>
+      </md-card-title>
+    <md-card-content class="secondary">
+      <p>Date: {{ getDate(log.createdAt) }}</p>
+      <p>Amount: {{ (log.totalCost * 1) | currency:'USD':true }}</p>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-button color="primary" (click)="gotoDetail(log.$key)">Edit</button>
+    </md-card-actions>
+  </md-card>
 </div>

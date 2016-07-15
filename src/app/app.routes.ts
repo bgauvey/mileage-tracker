@@ -1,11 +1,13 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 
-import { DashboardRoutes } from './dashboard/dashboard.routes';
-import { MileageLogRoutes } from './mileageLog/mileage-log.routes';
+import { DashboardRoutes } from './dashboard';
+import { LogRoutes } from './logs';
+import { VechicleRoutes } from './vehicles';
 
 const appRoutes: RouterConfig = [
   ...DashboardRoutes,
-  ...MileageLogRoutes
+  ...LogRoutes,
+  ...VechicleRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [

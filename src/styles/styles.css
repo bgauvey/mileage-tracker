@@ -26,11 +26,11 @@ h3 {
   background-color: #eee;
   color: black;
 }
-.mileage-tracker-layout-transparent {
-  background: url('http://www.extendedautowarranty.com/wp-content/uploads/background-road-car.png') center / cover;
+.service-tracker-layout-transparent {
+  background: url('../app/assets/Free-Highway-Backgrounds-Highway-Wallpaper-Images-in-HD-For-Desktops-Laptops.jpg') center / cover;
 }
-.mileage-tracker-layout-transparent .mdl-layout__header,
-.mileage-tracker-layout-transparent .mdl-layout__drawer-button {
+.service-tracker-layout-transparent .mdl-layout__header,
+.service-tracker-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
   color: white;
@@ -38,3 +38,7 @@ h3 {
 .not-displayed {
   display: none;
 }
+.displayed {
+  display: visible;
+}
+

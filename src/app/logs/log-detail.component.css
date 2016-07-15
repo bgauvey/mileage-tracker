@@ -1,0 +1,47 @@
+.secondary {
+    color: rgba(0,0,0,0.54);
+}
+
+md-card {
+    margin: 16px;
+    width: 300px;
+}
+
+md-input {
+    width: 100%;
+}
+
+.select-wrap select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  border:none;
+  padding: 0.5em 2em 0.5em 0.5em;
+  background: transparent;
+  position:relative;
+  cursor:pointer;
+}
+.select-wrap {
+  display:inline-block;
+  position:relative;
+  border-left:1px solid #cccccc; 
+  border-right:1px solid #cccccc;
+}
+.select-wrap::after {
+  display:block;
+  width:0px;
+  height:0px;
+  content:"　";
+  position:absolute;
+  right:0.5em;
+  top:50%;
+  margin-top:-0.25em;
+  border-top:0.5em solid #777777;
+  border-left:0.5em solid transparent;
+  border-right:0.5em solid transparent;
+  
+  
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+}

@@ -1,5 +1,5 @@
-<div class="mileage-tracker-layout-transparent mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header mdl-layout__header--transparent">
+<div [class.mdl-layout--no-desktop-drawer-button]="!isAauthenticated()" class="service-tracker-layout-transparent mdl-layout mdl-js-layout">
+    <header *ngIf="isAauthenticated()" class="mdl-layout__header mdl-layout__header--transparent">
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title"><a class="title-navigation__link"  href="/">Service Tracker</a></span>
@@ -8,8 +8,7 @@
             <!-- Navigation -->
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="/vehicles"><span><i class="material-icons">directions_car</i> Vehicles</span></a>
-                <a class="mdl-navigation__link" href="/mileageLogs"><span><i class="material-icons">history</i> Log</span></a>
-                <a class="mdl-navigation__link" href="#"><span><i class="material-icons">settings</i> Settings</span></a>
+                <a class="mdl-navigation__link" href="/logs"><span><i class="material-icons">history</i> Log</span></a>
             </nav>
         </div>
     </header>
@@ -18,8 +17,9 @@
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="/"><span><i class="material-icons">home</i> Home</span></a>
             <a class="mdl-navigation__link" href="#"><span><i class="material-icons">directions_car</i> Vehicles</span></a>
-            <a class="mdl-navigation__link" href="/mileageLogs"><span><i class="material-icons">history</i> Log</span></a>
+            <a class="mdl-navigation__link" href="/logs"><span><i class="material-icons">history</i> Log</span></a>
             <a class="mdl-navigation__link" href="#"><span><i class="material-icons">settings</i> Settings</span></a>
+            <a class="mdl-navigation__link" href="#" (click)="signOut()"><span><i class="material-icons">account_circle</i> Sign Out</span></a>
         </nav>
     </div>
 
@@ -30,9 +30,9 @@
             </div>
         </section>
     </main>
+    <modal-confirm></modal-confirm>    
     <spinner></spinner>
     <toast></toast>
-    <modal-confirm></modal-confirm>
     <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
             Created by <a href="http://twitter.com/bgauvey" target="_blank">Bill Gauvey</a>

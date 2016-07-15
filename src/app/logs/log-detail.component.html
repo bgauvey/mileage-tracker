@@ -1,0 +1,28 @@
+<md-card>
+  <md-card-title color="accent">
+    <md-card-title-text>Log Detail</md-card-title-text>
+  </md-card-title>
+  <md-card-content class="secondary">
+    <form #f="ngForm">
+      <md-radio-group name="logType" [(ngModel)]="editableLog.logType">
+        <md-radio-button value="0">Fuel Purchase</md-radio-button>
+        <md-radio-button value="1">Repair</md-radio-button>
+        <md-radio-button value="2">Service</md-radio-button>
+      </md-radio-group>
+      <p></p>
+      <md-input placeholder="Odometer (Miles)" name="odometer" [(ngModel)]="editableLog.odometer"></md-input>
+      <md-input placeholder="Description" cols="40" rows="5" name="description" [(ngModel)]="editableLog.description"></md-input>
+      <md-input placeholder="Quantity (gallons)" name="gallons" [(ngModel)]="editableLog.gallons"></md-input>
+      <md-input placeholder="Cost per Unit (USD)" name="costPerGallon" [(ngModel)]="editableLog.costPerGallon"><span md-prefix>$&nbsp;</span>
+        <span md-suffix>.00</span>
+      </md-input>
+      <md-input placeholder="Total Cost (USD)" name="totalCost" [(ngModel)]="editableLog.totalCost"><span md-prefix>$&nbsp;</span>
+        <span md-suffix>.00</span>
+      </md-input>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="accent" (click)="save()"> Save </button>&nbsp;
+    <button md-raised-button (click)="deleteLog()" [class.not-displayed]="adding"> Delete </button>
+  </md-card-actions>
+</md-card>

@@ -1,0 +1,36 @@
+<article>
+  <h3>Logs</h3>
+
+  <button md-raised-button color="accent" (click)="addNew()">Add</button>
+
+  <filter-text (changed)="filterChanged($event)"></filter-text>
+
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">Date</th>
+        <th>Type</th>
+        <th>Odometer</th>
+        <th>Quantity</th>
+        <th>Cost per Unit</th>
+        <th>Total Cost</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs | async">
+        <td class="mdl-data-table__cell--non-numeric">{{ log.createdAt | date }}</td>
+        <td>{{ getTypeString(log.logType) }}</td>
+        <td>{{ (log.odometer * 1) | number }} Miles</td>
+        <td>{{ log.gallons}} Gallons</td>
+        <td>{{ (log.costPerGallon * 1) | currency:"USD":true }}</td>
+        <td>{{ (log.totalCost * 1) | currency:"USD":true }}</td>
+        <td>
+          <button md-icon-button color="primary"(click)="gotoDetail(log.$key)">
+            <i class="material-icons">edit</i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article>
