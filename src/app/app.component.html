@@ -1,7 +1,7 @@
-<md-sidenav-layout fullscreen class="service-tracker-app" >
+<md-sidenav-layout fullscreen class="service-tracker-app">
     <md-sidenav #sidenav>
         <header>
-            <img [src]="userIamge()" class="avatar-frame"/>
+            <img [src]="userIamge()" class="avatar-frame" />
             <h4>Bill Gauvey</h4>
         </header>
         <md-nav-list>
@@ -14,7 +14,7 @@
                 <md-icon md-list-icon>account_circle</md-icon>
                 <span md-line>Sign Out</span>
                 <span md-line class="secondary">Exit the application</span>
-                </a>
+            </a>
         </md-nav-list>
     </md-sidenav>
     <md-toolbar *ngIf="isAauthenticated()">
@@ -24,8 +24,15 @@
           </svg>
         </button> {{title}}
     </md-toolbar>
-    <router-outlet></router-outlet>
+    <section>
+        <div class="page-content">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
     <modal-confirm></modal-confirm>
     <spinner></spinner>
     <toast></toast>
+    <footer class="site-footer">
+        Created by <a href="http://twitter.com/bgauvey" target="_blank">Bill Gauvey</a>
+    </footer>
 </md-sidenav-layout>
