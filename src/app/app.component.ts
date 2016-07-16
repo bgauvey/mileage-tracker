@@ -39,8 +39,6 @@ declare var componentHandler: any;
   providers: [APP_PROVIDERS]
 })
 export class AppComponent {
-  constructor(private auth: AuthService) { }
-
   title: string = 'Service Tracker';
 
   views: Object[] = [
@@ -69,6 +67,8 @@ export class AppComponent {
       href: '#'
     }
   ];
+
+  constructor(private auth: AuthService) { }
 
   isAauthenticated(): boolean {
     return this.auth.authenticated;
