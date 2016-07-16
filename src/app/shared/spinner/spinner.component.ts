@@ -4,7 +4,6 @@ import { MdProgressCircle } from '@angular2-material/progress-circle';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
-declare var componentHandler: any;
 const ACTIVE_CLASS = 'is-active';
 
 @Component({
@@ -25,7 +24,6 @@ export class SpinnerComponent implements OnDestroy, OnInit {
   constructor(private _spinnerService: SpinnerService) { }
 
   ngOnInit(): void {
-    componentHandler.upgradeDom();
     this._spinnerStateChanged = this._spinnerService.spinnerState
       .subscribe((state: ISpinnerState) => this.visible = state.show);
   }

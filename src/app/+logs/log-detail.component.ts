@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Rx';
@@ -15,7 +15,6 @@ import { InitCapsPipe } from '../shared/init-caps.pipe';
 
 import { LogService, ILog, Log } from '../core/logs';
 
-declare var componentHandler: any;
 
 @Component({
   moduleId: module.id,
@@ -25,7 +24,7 @@ declare var componentHandler: any;
   directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, MdRadioButton, MdRadioGroup, ROUTER_DIRECTIVES],
   pipes: [InitCapsPipe]
 })
-export class LogDetailComponent implements OnInit, OnDestroy, AfterViewChecked {
+export class LogDetailComponent implements OnInit, OnDestroy {
 
   editableLog: ILog = new Log(0, 0, 0, 0, 0, 0, '');
   log: ILog;
@@ -38,10 +37,6 @@ export class LogDetailComponent implements OnInit, OnDestroy, AfterViewChecked {
     private _entityService: EntityService,
     private _location: Location,
     private _logService: LogService) { }
-
-  ngAfterViewChecked(): void {
-    componentHandler.upgradeDom();
-  }
 
   ngOnInit(): void {
     let id: string;
