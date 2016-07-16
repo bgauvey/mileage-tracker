@@ -22,7 +22,7 @@ TypeScript modules and the required scripts used in the application.
 ## Additional Components Used
 
 * Materal2 - Material Design components for Angular 2 https://material.angular.io/
-* AnuularFire2 - Angular 2 library for Firebase. https://angularfire2.com
+* AngularFire2 - Angular 2 library for Firebase. https://angularfire2.com
 
 ## Running the Application
 
