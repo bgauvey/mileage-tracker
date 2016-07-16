@@ -22,7 +22,8 @@ const materialPackages: string[] = [
   'card',
   'input',
   'radio',
-  'checkbox'
+  'checkbox',
+  'progress-circle'
 ];
 
 const packages: any = createCustomConfig(materialPackages);
