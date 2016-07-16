@@ -9,11 +9,15 @@
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="/vehicles"><span><i class="material-icons">directions_car</i> Vehicles</span></a>
                 <a class="mdl-navigation__link" href="/logs"><span><i class="material-icons">history</i> Log</span></a>
+                
             </nav>
         </div>
     </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Service Tracker</span>
+        <span class="mdl-layout-title sidebar-header">
+            <img [src]="userIamge()" class="avatar-frame"/>
+            <h4>Bill Gauvey</h4>
+        </span>
         <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="/"><span><i class="material-icons">home</i> Home</span></a>
             <a class="mdl-navigation__link" href="#"><span><i class="material-icons">directions_car</i> Vehicles</span></a>

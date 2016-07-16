@@ -12,6 +12,16 @@ export class AuthService {
     });
   }
 
+  get userImage(): string {
+    let path: string; 
+    this.auth$.subscribe((data) => {
+      if (data) {
+        path = data.auth.photoURL;
+      }
+    });
+    return path;
+  }
+
   get authenticated(): boolean {
     return this.authState !== null;
   }
@@ -21,7 +31,7 @@ export class AuthService {
   }
 
   signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-    return this.auth$.login({provider})
+    return this.auth$.login({ provider })
       .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
   }
 
