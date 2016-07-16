@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
+import { MdProgressCircle } from '@angular2-material/progress-circle';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
@@ -9,27 +10,27 @@ const ACTIVE_CLASS = 'is-active';
 @Component({
   selector: 'spinner',
   template: `
-    <div
-      class="spinner mdl-spinner mdl-js-spinner mdl-spinner--single-color"
-      [class.is-active]="visible"></div>
+    <md-spinner
+      [class.is-active]="visible"></md-spinner>
   `,
-  styles: [`.spinner {position: absolute;left: 46%;top: 12%`]
+  styles: [`.spinner {position: absolute;left: 46%;top: 12%`],
+  directives: [MdProgressCircle]
 })
 
 export class SpinnerComponent implements OnDestroy, OnInit {
-  visible = false;
+  visible: boolean = false;
 
   private _spinnerStateChanged: Subscription;
 
   constructor(private _spinnerService: SpinnerService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     componentHandler.upgradeDom();
     this._spinnerStateChanged = this._spinnerService.spinnerState
       .subscribe((state: ISpinnerState) => this.visible = state.show);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this._spinnerStateChanged.unsubscribe();
   }
 }
