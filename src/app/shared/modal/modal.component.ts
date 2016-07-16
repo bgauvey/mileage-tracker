@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MdButton } from '@angular2-material/button';
+import { MdCard } from '@angular2-material/card';
 import { ModalService } from './modal.service';
 
 const KEY_ESC = 27;
@@ -7,7 +8,8 @@ const KEY_ESC = 27;
 @Component({
   selector: 'modal-confirm',
   templateUrl: 'app/shared/modal/modal.component.html',
-  styleUrls: ['app/shared/modal/modal.component.css']
+  styleUrls: ['app/shared/modal/modal.component.css'],
+  directives: [MdButton, MdCard]
 })
 export class ModalComponent implements OnInit {
   title: string;
@@ -62,12 +64,12 @@ export class ModalComponent implements OnInit {
 
     this._cancelButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.negativeOnClick(e)) this._hideDialog()
+      if (!this.negativeOnClick(e)) this._hideDialog();
     });
 
     this._okButton.onclick = ((e: any) => {
       e.preventDefault();
-      if (!this.positiveOnClick(e)) this._hideDialog()
+      if (!this.positiveOnClick(e)) this._hideDialog();
     });
 
     this._modalElement.onclick = () => {
