@@ -1,45 +1,31 @@
-<div [class.mdl-layout--no-desktop-drawer-button]="!isAauthenticated()" class="service-tracker-layout-transparent mdl-layout mdl-js-layout">
-    <header *ngIf="isAauthenticated()" class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title"><a class="title-navigation__link"  href="/">Service Tracker</a></span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation -->
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/vehicles"><span><i class="material-icons">directions_car</i> Vehicles</span></a>
-                <a class="mdl-navigation__link" href="/logs"><span><i class="material-icons">history</i> Log</span></a>
-                
-            </nav>
-        </div>
-    </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title sidebar-header">
+<md-sidenav-layout fullscreen class="service-tracker-app" >
+    <md-sidenav #sidenav>
+        <header>
             <img [src]="userIamge()" class="avatar-frame"/>
             <h4>Bill Gauvey</h4>
-        </span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="/"><span><i class="material-icons">home</i> Home</span></a>
-            <a class="mdl-navigation__link" href="#"><span><i class="material-icons">directions_car</i> Vehicles</span></a>
-            <a class="mdl-navigation__link" href="/logs"><span><i class="material-icons">history</i> Log</span></a>
-            <a class="mdl-navigation__link" href="#"><span><i class="material-icons">settings</i> Settings</span></a>
-            <a class="mdl-navigation__link" href="#" (click)="signOut()"><span><i class="material-icons">account_circle</i> Sign Out</span></a>
-        </nav>
-    </div>
-
-    <main class="mdl-layout__content">
-        <section>
-            <div class="page-content">
-                <router-outlet></router-outlet>
-            </div>
-        </section>
-    </main>
-    <modal-confirm></modal-confirm>    
+        </header>
+        <md-nav-list>
+            <a md-list-item *ngFor="let view of views" [href]="view.href" (click)="view.event">
+                <md-icon md-list-icon>{{view.icon}}</md-icon>
+                <span md-line>{{view.name}}</span>
+                <span md-line class="secondary">{{view.description}}</span>
+            </a>
+            <a md-list-item href="#" (click)="signOut()">
+                <md-icon md-list-icon>account_circle</md-icon>
+                <span md-line>Sign Out</span>
+                <span md-line class="secondary">Exit the application</span>
+                </a>
+        </md-nav-list>
+    </md-sidenav>
+    <md-toolbar *ngIf="isAauthenticated()">
+        <button md-icon-button (click)="sidenav.open()">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+          </svg>
+        </button> {{title}}
+    </md-toolbar>
+    <router-outlet></router-outlet>
+    <modal-confirm></modal-confirm>
     <spinner></spinner>
     <toast></toast>
-    <footer class="mdl-mini-footer">
-        <div class="mdl-mini-footer__left-section">
-            Created by <a href="http://twitter.com/bgauvey" target="_blank">Bill Gauvey</a>
-        </div>
-    </footer>
-</div>
+</md-sidenav-layout>

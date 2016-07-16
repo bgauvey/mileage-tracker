@@ -14,10 +14,13 @@ import { ModalComponent, SpinnerComponent, ToastComponent } from './shared';
 import { AuthService } from './core/auth';
 import { APP_PROVIDERS } from './app.providers';
 
+declare var componentHandler: any;
+
 @Component({
   moduleId: module.id,
   selector: 'app-root',
-  directives: [MD_SIDENAV_DIRECTIVES,
+  directives: [
+    MD_SIDENAV_DIRECTIVES,
     MD_LIST_DIRECTIVES,
     MD_CARD_DIRECTIVES,
     MdToolbar,
@@ -39,6 +42,33 @@ export class AppComponent {
   constructor(private auth: AuthService) { }
 
   title: string = 'Service Tracker';
+
+  views: Object[] = [
+    {
+      name: 'Home',
+      description: 'Home page',
+      icon: 'home',
+      href: '/'
+    },
+    {
+      name: 'Vehicles',
+      description: 'Vehicles listing',
+      icon: 'directions_car',
+      href: '#'
+    },
+    {
+      name: 'Log',
+      description: 'Service log',
+      icon: 'history',
+      href: '/logs'
+    },
+    {
+      name: 'My Account',
+      description: 'Edit my account information',
+      icon: 'assignment_ind',
+      href: '#'
+    }
+  ];
 
   isAauthenticated(): boolean {
     return this.auth.authenticated;

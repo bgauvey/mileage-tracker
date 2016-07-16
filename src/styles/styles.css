@@ -19,21 +19,15 @@ h3 {
   text-decoration: none;
   font-size: 1.2em;
 }
-.mdl-layout__content {
-  margin-left: .5em;
+
+.service-tracker-app {
+  background: url('../app/assets/Free-Highway-Backgrounds-Highway-Wallpaper-Images-in-HD-For-Desktops-Laptops.jpg') center / cover !important;
 }
-.mdl-layout__drawer {
-  background-color: #eee;
-  color: black;
-}
-.service-tracker-layout-transparent {
-  background: url('../app/assets/Free-Highway-Backgrounds-Highway-Wallpaper-Images-in-HD-For-Desktops-Laptops.jpg') center / cover;
-}
-.service-tracker-layout-transparent .mdl-layout__header,
-.service-tracker-layout-transparent .mdl-layout__drawer-button {
+.service-tracker-app md-toolbar {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
   color: white;
+  background-color: transparent;
 }
 .not-displayed {
   display: none;

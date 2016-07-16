@@ -35,6 +35,12 @@ md-sidenav-layout {
   background: rgba(0,0,0,0.03);
 }
 
+md-sidenav header {
+  background: rgba( 0, 128, 128, 0.85);
+  text-align: center;
+  color: white;
+  padding: 10px
+}
 md-input {
   margin: 8px 0;
   width: 100%;
