@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ToastService } from './toast.service'
+import { ToastService } from './toast.service';
 
 @Component({
   selector: 'toast',
@@ -8,12 +8,13 @@ import { ToastService } from './toast.service'
   styleUrls: ['app/shared/toast/toast.component.css']
 })
 export class ToastComponent implements OnInit {
-  private _defaults = {
+  title: string;
+  message: string;
+
+  private _defaults: any = {
     title: '',
     message: 'May the Force be with You'
   };
-  title: string;
-  message: string;
 
   private _toastElement: any;
 
@@ -21,17 +22,17 @@ export class ToastComponent implements OnInit {
     toastService.activate = this.activate.bind(this);
   }
 
-  activate(message = this._defaults.message, title = this._defaults.title) {
+  activate(message: string = this._defaults.message, title: string = this._defaults.title): void {
     this.title = title;
     this.message = message;
     this._show();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._toastElement = document.getElementById('toast');
   }
 
-  private _show() {
+  private _show(): void {
     console.log(this.message);
     this._toastElement.style.opacity = 1;
     this._toastElement.style.zIndex = 9999;
@@ -39,7 +40,7 @@ export class ToastComponent implements OnInit {
     window.setTimeout(() => this._hide(), 2500);
   }
 
-  private _hide() {
+  private _hide(): void {
     this._toastElement.style.opacity = 0;
     window.setTimeout(() => this._toastElement.style.zIndex = 0, 400);
   }
