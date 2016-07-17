@@ -1,7 +1,19 @@
-.mdl-data-table{
-    width: 99%;
-}
 h3 {
   text-align: center; 
   margin-bottom: 0;
+}
+
+.secondary {
+  color: rgba(0,0,0,0.54);
+}
+
+md-card {
+  width: 400px;
+  box-sizing: border-box;
+  margin: 16px;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
 }
