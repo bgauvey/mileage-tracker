@@ -68,3 +68,15 @@ md-card {
   display: flex;
   flex-flow: row wrap;
 }
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout.*/
+  flex: 1 1 auto;
+}
+
+.toolbar-nav-link {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+}
