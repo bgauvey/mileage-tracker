@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MD_ICON_DIRECTIVES } from '@angular2-material/icon';
 
 import { FilterService, FilterTextComponent } from '../shared';
 import { LogService, ILog } from '../core/logs';
@@ -11,7 +13,7 @@ import { LogService, ILog } from '../core/logs';
   selector: 'log-list',
   templateUrl: 'log-list.component.html',
   styleUrls: ['log-list.component.css'],
-  directives: [ROUTER_DIRECTIVES, FilterTextComponent, MD_BUTTON_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, FilterTextComponent, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES,MD_ICON_DIRECTIVES]
 })
 export class LogListComponent implements OnInit {
   logs: Observable<ILog[]>;
@@ -34,20 +36,20 @@ export class LogListComponent implements OnInit {
     this.router.navigate(['/log'], { queryParams: { id: id } });
   }
 
-    getDate(value: number): string {
-        return new Date(value).toLocaleDateString(`en-US`);
-    }
+  getDate(value: number): string {
+    return new Date(value).toLocaleDateString(`en-US`);
+  }
 
-    getTypeString(value: string): string {
-        switch (value.toString()) {
-            case '0':
-                return 'Fuel Purchase';
-            case '1':
-                return 'Repair';
-            case '2':
-                return 'Service';
-            default:
-                return '';
-        }
+  getTypeString(value: string): string {
+    switch (value.toString()) {
+      case '0':
+        return 'Fuel Purchase';
+      case '1':
+        return 'Repair';
+      case '2':
+        return 'Service';
+      default:
+        return '';
     }
   }
+}

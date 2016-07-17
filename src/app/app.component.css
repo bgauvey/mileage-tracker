@@ -15,10 +15,10 @@
       background-color: #008080;
 }
 .sidebar-header h4 {
-color: white;
-margin-bottom: 4px;
-top: -10px;
-position: relative;
+  color: white;
+  margin-bottom: 4px;
+  top: -10px;
+  position: relative;
 }
 .secondary {
   color: rgba(0,0,0,0.54);
@@ -41,6 +41,7 @@ md-sidenav header {
   color: white;
   padding: 10px
 }
+
 md-input {
   margin: 8px 0;
   width: 100%;
@@ -79,4 +80,9 @@ md-card {
   text-decoration: none;
   color: white;
   padding: 20px;
+  line-height: 56px;
+}
+
+md-toolbar {
+  padding-right: 30px;
 }

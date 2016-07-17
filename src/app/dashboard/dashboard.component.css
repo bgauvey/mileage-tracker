@@ -13,12 +13,6 @@ h3 {
   color: rgba(0,0,0,0.54);
 }
 
-[md-fab] {
-  position: absolute;
-  right: 3%;
-  top: 34px;
-  z-index: 1;
-}
 
 md-sidenav-layout {
   background: rgba(0,0,0,0.03);

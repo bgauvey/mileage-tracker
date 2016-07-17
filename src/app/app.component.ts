@@ -52,7 +52,7 @@ export class AppComponent {
       name: 'Vehicles',
       description: 'Vehicles listing',
       icon: 'directions_car',
-      href: '#'
+      href: '/vehicles'
     },
     {
       name: 'Log',
