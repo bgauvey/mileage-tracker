@@ -34,17 +34,20 @@ export class LogListComponent implements OnInit {
     this.router.navigate(['/log'], { queryParams: { id: id } });
   }
 
-  getTypeString(value: string): string {
-    switch (value.toString()) {
-      case '0':
-        return 'Fuel Purchase';
-      case '1':
-        return 'Repair';
-      case '2':
-        return 'Service';
-      default:
-        return '';
+    getDate(value: number): string {
+        return new Date(value).toLocaleDateString(`en-US`);
+    }
+
+    getTypeString(value: string): string {
+        switch (value.toString()) {
+            case '0':
+                return 'Fuel Purchase';
+            case '1':
+                return 'Repair';
+            case '2':
+                return 'Service';
+            default:
+                return '';
+        }
     }
   }
-
-}

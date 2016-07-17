@@ -1,24 +1,22 @@
-<article>
-  <h3>Logs</h3>
+<h3>Logs</h3>
 
-  <button md-raised-button color="accent" (click)="addNew()">Add</button>
+<button md-raised-button color="accent" (click)="addNew()">Add</button>
 
-  <filter-text (changed)="filterChanged($event)"></filter-text>
-  <div class="card-container">
-    <md-card *ngFor="let log of logs | async">
-      <md-card-title>
-        <img src="./app/assets/receipt.png" height="48" />
-        <md-card-title-text align="end">
-          {{ getTypeString(log.logType) }}
-        </md-card-title-text>
-      </md-card-title>
-      <md-card-content class="secondary">
-        <p>Date: {{ getDate(log.createdAt) }}</p>
-        <p>Amount: {{ (log.totalCost * 1) | currency:'USD':true }}</p>
-      </md-card-content>
-      <md-card-actions align="end">
-        <button md-button color="primary" (click)="gotoDetail(log.$key)">Edit</button>
-      </md-card-actions>
-    </md-card>
-  </div>
-</article>
+<filter-text (changed)="filterChanged($event)"></filter-text>
+<div class="card-container">
+  <md-card *ngFor="let log of logs | async">
+    <md-card-title>
+      <img src="./app/assets/receipt.png" height="48" />
+      <md-card-title-text align="end">
+        {{ getTypeString(log.logType) }}
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content class="secondary">
+      <p>Date: {{ getDate(log.createdAt) }}</p>
+      <p>Amount: {{ (log.totalCost * 1) | currency:'USD':true }}</p>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-button color="primary" (click)="gotoDetail(log.$key)">Edit</button>
+    </md-card-actions>
+  </md-card>
+</div>
