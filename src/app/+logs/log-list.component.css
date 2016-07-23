@@ -13,7 +13,7 @@ md-list {
   box-shadow: 2px 2px 1px rgba(0,0,0,0.54);;
 }
 
-a:hover{
+[md-list-item]:hover {
   cursor: pointer;
 }
 
