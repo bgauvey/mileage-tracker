@@ -36,19 +36,23 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     private _modalService: ModalService,
     private _entityService: EntityService,
     private _location: Location,
-    private _logService: LogService) { }
+    private _logService: LogService) {
+      this.adding = false;
+    }
 
   ngOnInit(): void {
     let id: string;
+    let isNew: boolean;
     this.sub = this._router
       .routerState
       .queryParams
       .subscribe(params => {
         if (params[`id`] != null) {
           id = params[`id`];
-          if (id === `new`) this.adding = true;
+          if (id === `new`) isNew = true;
         }
       });
+      this.adding = isNew;
     this._getLog(id);
   }
 

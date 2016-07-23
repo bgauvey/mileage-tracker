@@ -45,3 +45,6 @@ md-input {
   -webkit-pointer-events: none;
   pointer-events: none;
 }
+.not-displayed {
+  display: none;
+}
