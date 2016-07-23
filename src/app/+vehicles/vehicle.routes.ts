@@ -1,7 +1,7 @@
 import { RouterConfig }       from '@angular/router';
-import { VehiclesComponent }   from './vehicles.component';
+import { VehicleListComponent }   from './vehicle-list.component';
 import { AuthGuard }          from '../core/auth';
 
 export const VechicleRoutes: RouterConfig = [
-  { path: 'vehicles', component: VehiclesComponent, canActivate: [AuthGuard]  },
+  { path: 'vehicles', component: VehicleListComponent, canActivate: [AuthGuard]  },
 ];

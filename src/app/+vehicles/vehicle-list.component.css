@@ -1,0 +1,16 @@
+.heading {
+  text-align: center; 
+  margin-bottom: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+[md-fab] {
+  position: absolute;
+  right: 3%;
+  bottom: 56px;
+  z-index: 1;
+}
