@@ -1,3 +1,18 @@
-<p>
-  vehicle works!
-</p>
+<md-card>
+  <md-card-title color="accent">
+    <md-card-title-text>Vehicle Details</md-card-title-text>
+  </md-card-title>
+  <md-card-content class="secondary">
+    <form #f="ngForm">
+      <md-input placeholder="Make" name="make" [(ngModel)]="vehicle.make"></md-input>
+      <md-input placeholder="Model" name="model" [(ngModel)]="vehicle.model"></md-input>
+      <md-input placeholder="Year" name="year" [(ngModel)]="vehicle.year"></md-input>
+      <md-input placeholder="Nickname" name="nickname" [(ngModel)]="vehicle.nickname"></md-input>
+      <md-input placeholder="Color" name="color" [(ngModel)]="vehicle.color"></md-input>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="accent" (click)="save()"> Save </button>&nbsp;
+    <button md-raised-button (click)="delete()" [class.not-displayed]="adding"> Delete </button>
+  </md-card-actions>
+</md-card>

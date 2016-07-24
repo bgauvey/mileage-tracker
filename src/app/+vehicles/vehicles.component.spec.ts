@@ -14,7 +14,7 @@ import { VehicleComponent } from './vehicle.component';
 
 describe('Component: Vehicle', () => {
   it('should create an instance', () => {
-    let component = new VehicleComponent();
+    let component = new VehicleComponent(null, null, null, null,null);
     expect(component).toBeTruthy();
   });
 });
