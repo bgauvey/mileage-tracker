@@ -23,8 +23,8 @@ export class VehicleListComponent implements OnInit {
       this.vehicles = this.vehicleService.getAll();
   }
 
-  addNew(): void {
-      //
+   addNew(): void {
+    this.router.navigate(['/vehicle'], { queryParams: { id: 'new' } });
   }
 
   gotoDetail(id: number): void {

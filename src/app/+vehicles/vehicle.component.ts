@@ -20,7 +20,6 @@ import { VehicleService, IVehicle, Vehicle } from '../core/vehicles';
 export class VehicleComponent implements OnInit {
   adding: boolean = false;
   vehicle: IVehicle;
-  editableVehicle: IVehicle;
   private _sub: any;
 
   constructor(private _router: Router,
@@ -52,7 +51,35 @@ export class VehicleComponent implements OnInit {
   }
 
   save(): void {
-    //
+    try {
+      if (this.adding) {
+        this._vehicleService.createVehicle(this.vehicle)
+          .then(() => {
+            this._toastService.activate(`Successfully added entry`);
+            this._gotoVehicles();
+          },
+          (error) => {
+            this.handleError(error);
+          }
+          );
+      } else {
+        this._vehicleService.updateVehicle(this.vehicle, {
+          make: this.vehicle.make,
+          model: this.vehicle.model,
+          year: this.vehicle.year
+        })
+          .then(() => {
+            this._toastService.activate(`Successfully updated entry`);
+          },
+          (error) => {
+            this.handleError(error);
+          }
+          );
+      }
+    }
+    catch (error) {
+      this.handleError(error);
+    }
   }
 
   delete(): void {
@@ -75,11 +102,6 @@ export class VehicleComponent implements OnInit {
   private _setEditVehicle(vehicle: IVehicle): void {
     if (vehicle) {
       this.vehicle = vehicle;
-      this.editableVehicle = new Vehicle(
-        vehicle.make,
-        vehicle.model,
-        vehicle.year
-      );
     } else {
       this._gotoVehicles();
     }

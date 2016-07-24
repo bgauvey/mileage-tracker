@@ -5,5 +5,15 @@
         <md-icon class="md-24">add</md-icon>
     </button>
 
+    <div class="card-container">
+        <md-card *ngFor="let vehicle of vehicles | async">
+            <md-card-content class="secondary">
+                <p>Date: {{ getDate(vehicle.createdAt) }}</p>
+            </md-card-content>
+            <md-card-actions align="end">
+                <button md-button color="primary" (click)="gotoDetail(vehicle.$key)">Edit</button>
+            </md-card-actions>
+        </md-card>
+    </div>
 
 </article>
