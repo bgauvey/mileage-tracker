@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/bgauvey/service-tracker.svg?branch=master)](https://travis-ci.org/bgauvey/service-tracker)
+
 # Angular2 Service Tracker with TypeScript
 
 The goal of this app is to provide a simple way to get started with Angular 2 while
