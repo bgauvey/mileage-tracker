@@ -20,14 +20,18 @@ export class VehicleListComponent implements OnInit {
   constructor(private router: Router, private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
-      this.vehicles = this.vehicleService.getAll();
+    this.vehicles = this.vehicleService.getAll();
   }
 
-   addNew(): void {
+  addNew(): void {
     this.router.navigate(['/vehicle'], { queryParams: { id: 'new' } });
   }
 
   gotoDetail(id: number): void {
-      //
+    //
+  }
+
+  getDate(value: number): string {
+    return new Date(value).toLocaleDateString(`en-US`);
   }
 }
