@@ -20,6 +20,8 @@ import { VehicleService, IVehicle, Vehicle } from '../core/vehicles';
 export class VehicleComponent implements OnInit {
   adding: boolean = false;
   vehicle: IVehicle;
+  editableVehicle: IVehicle = new Vehicle('','','');
+
   private _sub: any;
 
   constructor(private _router: Router,
@@ -88,7 +90,7 @@ export class VehicleComponent implements OnInit {
 
   private _getVehicle(id: string): void {
     if (id === `new`) {
-      this.vehicle = new Vehicle('', '', '');
+      this.editableVehicle = new Vehicle('', '', '');
       return;
     }
     this._vehicleService.getById(id)
@@ -101,7 +103,11 @@ export class VehicleComponent implements OnInit {
 
   private _setEditVehicle(vehicle: IVehicle): void {
     if (vehicle) {
-      this.vehicle = vehicle;
+      this.editableVehicle = new Vehicle (
+        vehicle.make,
+        vehicle.model,
+        vehicle.year
+      );
     } else {
       this._gotoVehicles();
     }

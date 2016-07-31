@@ -8,7 +8,7 @@
     <div class="card-container">
         <md-card *ngFor="let vehicle of vehicles | async">
             <md-card-content class="secondary">
-                <p>Date: {{ getDate(vehicle.createdAt) }}</p>
+                <p>{{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }}</p>
             </md-card-content>
             <md-card-actions align="end">
                 <button md-button color="primary" (click)="gotoDetail(vehicle.$key)">Edit</button>

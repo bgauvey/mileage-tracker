@@ -28,7 +28,7 @@ export class VehicleListComponent implements OnInit {
   }
 
   gotoDetail(id: number): void {
-    //
+    this.router.navigate(['/vehicle'], { queryParams: { id: id } });
   }
 
   getDate(value: number): string {
