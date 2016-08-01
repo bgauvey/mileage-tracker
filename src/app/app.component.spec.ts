@@ -6,9 +6,11 @@ import {
   expect, it, xit,
   async, inject
 } from '@angular/core/testing';
-import { AppComponent } from './app.component';
 
-beforeEachProviders(() => [AppComponent]);
+import { AppComponent } from './app.component';
+import { AuthService } from './core/auth';
+
+beforeEachProviders(() => [AppComponent, AuthService]);
 
 describe('App: ServiceTracker', () => {
   it('should create the app',
