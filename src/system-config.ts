@@ -23,7 +23,10 @@ const materialPackages: string[] = [
   'input',
   'radio',
   'checkbox',
-  'progress-circle'
+  'progress-circle',
+  'grid-list',
+  'progress-bar',
+  'tabs'
 ];
 
 const packages: any = createCustomConfig(materialPackages);
