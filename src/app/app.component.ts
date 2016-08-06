@@ -46,19 +46,19 @@ export class AppComponent {
       name: 'Home',
       description: 'Home page',
       icon: 'home',
-      href: '/'
+      href: ''
     },
     {
       name: 'Vehicles',
       description: 'Vehicles listing',
       icon: 'directions_car',
-      href: '/vehicles'
+      href: 'vehicles'
     },
     {
       name: 'Log',
       description: 'Service log',
       icon: 'history',
-      href: '/logs'
+      href: 'logs'
     },
     {
       name: 'My Account',
