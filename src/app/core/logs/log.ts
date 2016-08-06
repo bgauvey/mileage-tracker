@@ -12,7 +12,7 @@ export interface ILog {
     gallons: number;
     costPerGallon: number;
     totalCost: number;
-    vehicleId: number;
+    vehicleId: string;
     logType: number;
 }
 
@@ -22,7 +22,7 @@ export class Log implements ILog {
     gallons: number;
     costPerGallon: number;
     totalCost: number;
-    vehicleId: number;
+    vehicleId: string;
     logType: LogType;
     description: string;
 
@@ -31,7 +31,7 @@ export class Log implements ILog {
         gallons: number,
         costPerGallon: number,
         totalCost: number,
-        vehicleId: number,
+        vehicleId: string,
         logType: number,
         description: string) {
         this.odometer = odometer;

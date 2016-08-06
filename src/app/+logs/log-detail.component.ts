@@ -14,7 +14,7 @@ import { EntityService } from '../shared/entity.service';
 import { InitCapsPipe } from '../shared/init-caps.pipe';
 
 import { LogService, ILog, Log } from '../core/logs';
-
+import { VehicleService, IVehicle } from '../core/vehicles';
 
 @Component({
   moduleId: module.id,
@@ -26,9 +26,10 @@ import { LogService, ILog, Log } from '../core/logs';
 })
 export class LogDetailComponent implements OnInit, OnDestroy {
 
-  editableLog: ILog = new Log(0, 0, 0, 0, 0, 0, '');
+  editableLog: ILog = new Log(0, 0, 0, 0, '', 0, '');
   log: ILog;
   adding: boolean = false;
+  vehicles: Observable<IVehicle[]>;
   private sub: any;
 
   constructor(private _router: Router,
@@ -36,13 +37,15 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     private _modalService: ModalService,
     private _entityService: EntityService,
     private _location: Location,
-    private _logService: LogService) {
+    private _logService: LogService,
+    private _vehicleService: VehicleService) {
       this.adding = false;
     }
 
   ngOnInit(): void {
     let id: string;
     let isNew: boolean;
+    this.vehicles = this._vehicleService.getAll();
     this.sub = this._router
       .routerState
       .queryParams
@@ -139,7 +142,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
 
   private _getLog(id: string): any {
     if (id === `new`) {
-      this.editableLog = new Log(0, 0, 0, 0, 0, 0, ''); // this._entityService.clone(this.log);
+      this.editableLog = new Log(0, 0, 0, 0, '', 0, ''); // this._entityService.clone(this.log);
       return;
     }
     this._logService.getById(id)

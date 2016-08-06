@@ -10,6 +10,10 @@
         <md-radio-button value="2">Service</md-radio-button>
       </md-radio-group>
       <p></p>
+      <select name="vehicleId" [(ngModel)]="editableLog.vehicleId">
+        <option *ngFor="let vehicle of vehicles | async">{{ vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model }}</option>
+      </select>
+      <p> </p>
       <md-input placeholder="Odometer (Miles)" name="odometer" [(ngModel)]="editableLog.odometer"></md-input>
       <md-input placeholder="Description" cols="40" rows="5" name="description" [(ngModel)]="editableLog.description"></md-input>
       <md-input placeholder="Quantity (gallons)" name="gallons" [(ngModel)]="editableLog.gallons"></md-input>
