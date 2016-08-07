@@ -8,7 +8,7 @@ import { AppComponent, environment, APP_ROUTER_PROVIDERS} from './app/';
 import { AUTH_PROVIDERS } from './app/core/auth';
 import { FIREBASE_APP_PROVIDERS } from './app/core/firebase';
 import { LOG_PROVIDERS } from './app/core/logs';
-import { VEHICLE_PROVIDERS } from './app/core/vehicles'
+import { VEHICLE_PROVIDERS } from './app/core/vehicles';
 
 if (environment.production) {
   enableProdMode();

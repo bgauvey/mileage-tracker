@@ -52,7 +52,9 @@ export class LogDetailComponent implements OnInit, OnDestroy {
       .subscribe(params => {
         if (params[`id`] != null) {
           id = params[`id`];
-          if (id === `new`) isNew = true;
+          if (id === `new`) {
+            isNew = true;
+          }
         }
       });
       this.adding = isNew;
@@ -107,7 +109,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
             this._toastService.activate(`Log successully deleted.`, `Service Log`);
             this._gotoLogs();
           },
-          (error) => {
+          (error: any) => {
             this.handleError(error);
           }
           );
@@ -115,7 +117,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  private handleError(error): void {
+  private handleError(error: any): void {
     this._toastService.activate(`${error}`);
   }
 

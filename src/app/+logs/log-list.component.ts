@@ -13,7 +13,7 @@ import { LogService, ILog } from '../core/logs';
   selector: 'log-list',
   templateUrl: 'log-list.component.html',
   styleUrls: ['log-list.component.css'],
-  directives: [ROUTER_DIRECTIVES, FilterTextComponent, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES,MD_ICON_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, FilterTextComponent, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES]
 })
 export class LogListComponent implements OnInit {
   logs: Observable<ILog[]>;

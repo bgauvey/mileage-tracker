@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class FilterService {
-	constructor() { }
 
-  filter(data: string, props: Array<string>, originalList: Array<any>) {
+  filter(data: string, props: Array<string>, originalList: Array<any>): any[] {
     let filteredList: any[];
     if (data && props && originalList) {
       data = data.toLowerCase();

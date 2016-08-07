@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   get userImage(): string {
-    let path: string; 
+    let path: string;
     this.auth$.subscribe((data) => {
       if (data) {
         path = data.auth.photoURL;

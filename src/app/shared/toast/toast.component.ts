@@ -13,7 +13,7 @@ export class ToastComponent implements OnInit {
 
   private _defaults: any = {
     title: '',
-    message: 'May the Force be with You'
+    message: ''
   };
 
   private _toastElement: any;

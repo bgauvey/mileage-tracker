@@ -12,7 +12,7 @@ export const FIREBASE_APP_PROVIDERS: any[] = [
     apiKey: 'AIzaSyBEfCeCg9RJtibHNnQ1ilNWHHSpmQglIaE',
     authDomain: 'mileage-tracker-1aad1.firebaseapp.com',
     databaseURL: 'https://mileage-tracker-1aad1.firebaseio.com',
-    storageBucket: 'mileage-tracker-1aad1.appspot.com',
+    storageBucket: 'mileage-tracker-1aad1.appspot.com'
   }),
   firebaseAuthConfig({
     method: AuthMethods.Popup,

@@ -4,8 +4,6 @@ import { MdProgressCircle } from '@angular2-material/progress-circle';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
-const ACTIVE_CLASS = 'is-active';
-
 @Component({
   selector: 'spinner',
   template: `

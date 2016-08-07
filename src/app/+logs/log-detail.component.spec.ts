@@ -14,7 +14,7 @@ import { LogDetailComponent } from './log-detail.component';
 
 describe('Component: LogDetail', () => {
   it('should create an instance', () => {
-    let component = new LogDetailComponent(null, null, null, null,null, null, null)
+    let component = new LogDetailComponent(null, null, null, null,null, null, null);
     expect(component).toBeTruthy();
   });
 });
