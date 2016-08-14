@@ -1,16 +1,13 @@
 /* tslint:disable:no-unused-variable */
 
 import {
-  beforeEach, beforeEachProviders,
-  describe, xdescribe,
-  expect, it, xit,
   async, inject
 } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { AuthService } from './core/auth';
 
-beforeEachProviders(() => [AppComponent, AuthService]);
+//beforeEachProviders(() => [AppComponent, AuthService]);
 
 describe('App: ServiceTracker', () => {
   it('should create the app',
