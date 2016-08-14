@@ -12,7 +12,7 @@ export class Vehicle implements IVehicle {
     year: string;
     createdAt: number = firebase.database['ServerValue']['TIMESTAMP'];
 
-    constructor(make: string, model: string, year: string){
+    constructor(make: string, model: string, year: string) {
         this.make = make;
         this.model = model;
         this.year = year;

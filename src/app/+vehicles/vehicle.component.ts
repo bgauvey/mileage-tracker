@@ -15,7 +15,7 @@ import { VehicleService, IVehicle, Vehicle } from '../core/vehicles';
   selector: 'app-vehicle',
   templateUrl: 'vehicle.component.html',
   styleUrls: ['vehicle.component.css'],
-  directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, ROUTER_DIRECTIVES],
+  directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, ROUTER_DIRECTIVES]
 })
 export class VehicleComponent implements OnInit {
   adding: boolean = false;

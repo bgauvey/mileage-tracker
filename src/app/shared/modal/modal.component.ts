@@ -19,7 +19,7 @@ export class ModalComponent implements OnInit {
   negativeOnClick: (e: any) => void;
   positiveOnClick: (e: any) => void;
 
-  private _defaults = {
+  private _defaults: any = {
     title: 'Confirmation',
     message: 'Do you want to cancel your changes?',
     cancelText: 'Cancel',
@@ -33,7 +33,7 @@ export class ModalComponent implements OnInit {
     modalService.activate = this.activate.bind(this);
   }
 
-  activate(message = this._defaults.message, title = this._defaults.title) {
+  activate(message: string = this._defaults.message, title: string = this._defaults.title): Promise<boolean> {
     this.title = title;
     this.message = message;
     this.okText = this._defaults.okText;
@@ -48,13 +48,13 @@ export class ModalComponent implements OnInit {
     return promise;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._modalElement = document.getElementById('confirmationModal');
     this._cancelButton = document.getElementById('cancelButton');
     this._okButton = document.getElementById('okButton');
   }
 
-  private _show() {
+  private _show(): void {
     document.onkeyup = null;
 
     if (!this._modalElement || !this._cancelButton || !this._okButton) return;
@@ -87,7 +87,7 @@ export class ModalComponent implements OnInit {
     this._modalElement.style.opacity = 1;
   }
 
-  private _hideDialog() {
+  private _hideDialog(): void {
     document.onkeyup = null;
     this._modalElement.style.opacity = 0;
     window.setTimeout(() => this._modalElement.style.zIndex = 0, 400);

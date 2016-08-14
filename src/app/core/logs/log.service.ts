@@ -55,7 +55,7 @@ export class LogService {
     return Observable.merge(log);
   }
 
-  getTop4() {
+  getTop4(): Observable<ILog[]> {
     return this.logs$.take(4);
   }
 

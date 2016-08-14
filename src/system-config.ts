@@ -2,9 +2,6 @@
 // https://github.com/systemjs/systemjs
 // https://github.com/systemjs/systemjs/blob/master/docs/config-api.md
 
-/***********************************************************************************************
- * User Configuration.
- **********************************************************************************************/
 const map: any = {
   '@angular2-material': 'vendor/@angular2-material',
   'firebase': 'vendor/firebase/firebase.js',
@@ -30,7 +27,7 @@ const materialPackages: string[] = [
 ];
 
 const packages: any = createCustomConfig(materialPackages);
-  
+
 function createCustomConfig(packages: string[]): any {
   return packages.reduce((packageConfig: any, packageName: string) => {
     packageConfig[`@angular2-material/${packageName}`] = {
@@ -47,9 +44,7 @@ function createCustomConfig(packages: string[]): any {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-/***********************************************************************************************
- * Everything underneath this line is managed by the CLI.
- **********************************************************************************************/
+// Everything underneath this line is managed by the CLI.
 const barrels: string[] = [
   // Angular specific barrels.
   '@angular/core',
@@ -78,7 +73,7 @@ const barrels: string[] = [
   'app/shared/modal',
   'app/shared/sign-in',
   'app/shared/spinner',
-  'app/shared/toast',
+  'app/shared/toast'
   /** @cli-barrel */
 ];
 
