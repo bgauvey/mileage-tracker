@@ -85,7 +85,19 @@ export class VehicleComponent implements OnInit {
   }
 
   delete(): void {
- 	  //
+    let msg = `Do you want to delete this vehicle?`;
+    this._modalService.activate(msg).then(responseOK => {
+      if (responseOK) {
+           this._vehicleService.removeVehicle(this.editableVehicle)
+           .then(() => {
+            this._toastService.activate(`Vehicle successully deleted.`, `Service Log`);
+            this._gotoVehicles();
+          },
+          (error: any) => {
+            this.handleError(error);
+          });
+      }
+    });
   }
 
   private _getVehicle(id: string): void {
