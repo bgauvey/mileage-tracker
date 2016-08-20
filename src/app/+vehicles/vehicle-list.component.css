@@ -21,7 +21,9 @@
 }
 
 md-card {
-  padding: 0 !important
+  padding: 0 !important;
+  padding-bottom: 30px !important;
+  margin: 20px;
 }
 
 .secondary {
