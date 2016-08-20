@@ -15,7 +15,6 @@ export const FIREBASE_APP_PROVIDERS: any[] = [
     storageBucket: 'mileage-tracker-1aad1.appspot.com'
   }),
   firebaseAuthConfig({
-    method: AuthMethods.Popup,
-    remember: 'default'
+    method: AuthMethods.Popup
   })
 ];

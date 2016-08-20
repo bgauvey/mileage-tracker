@@ -7,6 +7,6 @@
   "ambientDependencies": {
     "core-js": "registry:dt/core-js#0.0.0+20160602141332",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
-    "firebase3": "file:node_modules/angularfire2/firebase3.d.ts"
+    "firebase3": "https://npmcdn.com/angularfire2@2.0.0-beta.2/firebase3.d.ts"
   }
 }
