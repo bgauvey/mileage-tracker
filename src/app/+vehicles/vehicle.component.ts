@@ -55,7 +55,7 @@ export class VehicleComponent implements OnInit {
   save(): void {
     try {
       if (this.adding) {
-        this._vehicleService.createVehicle(this.vehicle)
+        this._vehicleService.createVehicle(this.editableVehicle)
           .then(() => {
             this._toastService.activate(`Successfully added entry`);
             this._gotoVehicles();
