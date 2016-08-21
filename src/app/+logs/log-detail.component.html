@@ -11,7 +11,7 @@
       </md-radio-group>
       <p></p>
       <select name="vehicleId" [(ngModel)]="editableLog.vehicleId">
-        <option *ngFor="let vehicle of vehicles | async">{{ vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model }}</option>
+        <option *ngFor="let vehicle of vehicles | async" [value]="vehicle.$key">{{ vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model }}</option>
       </select>
       <p> </p>
       <md-input placeholder="Odometer (Miles)" name="odometer" [(ngModel)]="editableLog.odometer"></md-input>
