@@ -10,4 +10,4 @@ const APP_ROUTER_CONFIG: RouterConfig = [
   ...vechicleRoutes
 ];
 
-export var routes = RouterModule.forRoot(APP_ROUTER_CONFIG);
+export const APP_ROUTER_PROVIDERS = RouterModule.forRoot(APP_ROUTER_CONFIG);

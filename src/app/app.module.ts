@@ -16,7 +16,7 @@ import { DashboardComponent } from './dashboard';
 import { LogDetailComponent, LogListComponent } from './+logs';
 import { SignInComponent } from './shared';
 import { VehicleComponent, VehicleListComponent } from './+vehicles';
-import { routes }   from './app.routes';
+import { APP_ROUTER_PROVIDERS }   from './app.routes';
 
 // core
 import { AUTH_PROVIDERS }         from './core/auth';
@@ -34,7 +34,7 @@ import { VEHICLE_PROVIDERS }      from './core/vehicles';
         VehicleListComponent
     ],
     imports: [BrowserModule,
-        routes,
+        APP_ROUTER_PROVIDERS,
         FormsModule,
         HttpModule,
         // Material Design
