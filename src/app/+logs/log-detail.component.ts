@@ -1,28 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { Router, ActivatedRoute /*, ROUTER_DIRECTIVES*/ } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Rx';
 
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MdInput } from '@angular2-material/input';
-import { MdRadioButton, MdRadioGroup } from '@angular2-material/radio';
-
-import { ModalService } from '../shared';
+import { ModalService } from '../shared/modal/modal.service';
 import { ToastService } from '../shared/toast/toast.service';
 import { EntityService } from '../shared/entity.service';
-import { InitCapsPipe } from '../shared/init-caps.pipe';
-
 import { LogService, ILog, Log } from '../core/logs';
 import { VehicleService, IVehicle } from '../core/vehicles';
 
 @Component({
-  moduleId: module.id,
   selector: 'log-detail',
   templateUrl: 'log-detail.component.html',
   styleUrls: ['log-detail.component.css'],
-  directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, MdRadioButton, MdRadioGroup, ROUTER_DIRECTIVES],
-  pipes: [InitCapsPipe]
 })
 export class LogDetailComponent implements OnInit, OnDestroy {
 
@@ -33,6 +23,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
   private sub: any;
 
   constructor(private _router: Router,
+    private _route: ActivatedRoute,
     private _toastService: ToastService,
     private _modalService: ModalService,
     private _entityService: EntityService,
@@ -46,8 +37,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
     let id: string;
     let isNew: boolean;
     this.vehicles = this._vehicleService.getAll();
-    this.sub = this._router
-      .routerState
+    this.sub = this._route
       .queryParams
       .subscribe(params => {
         if (params[`id`] != null) {
@@ -94,8 +84,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
           }
           );
       }
-    }
-    catch (error) {
+    } catch (error) {
       this.handleError(error);
     }
   }
@@ -144,7 +133,7 @@ export class LogDetailComponent implements OnInit, OnDestroy {
 
   private _getLog(id: string): any {
     if (id === `new`) {
-      this.editableLog = new Log(0, 0, 0, 0, '', 0, ''); // this._entityService.clone(this.log);
+      this.editableLog = new Log(0, 0, 0, 0, '', 0, '');
       return;
     }
     this._logService.getById(id)

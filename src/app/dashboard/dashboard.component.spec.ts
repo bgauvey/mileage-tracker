@@ -1,12 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import {
-  async, inject
-} from '@angular/core/testing';
-
+import { TestBed, async } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 
 describe('Component: Dashboard', () => {

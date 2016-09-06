@@ -1,17 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs/Rx';
-import { MdProgressCircle } from '@angular2-material/progress-circle';
 
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
 @Component({
   selector: 'spinner',
-  template: `
-    <md-spinner
-      [class.is-active]="visible"></md-spinner>
-  `,
+  template: `<md-spinner [class.is-active]="visible"></md-spinner>`,
   styles: [`.spinner {position: absolute;left: 46%;top: 12%`],
-  directives: [MdProgressCircle]
 })
 
 export class SpinnerComponent implements OnDestroy, OnInit {

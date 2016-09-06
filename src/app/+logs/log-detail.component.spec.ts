@@ -1,17 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import {
-  async, inject
-} from '@angular/core/testing';
-
+import { TestBed, async } from '@angular/core/testing';
 import { LogDetailComponent } from './log-detail.component';
 
 describe('Component: LogDetail', () => {
   it('should create an instance', () => {
-    let component = new LogDetailComponent(null, null, null, null,null, null, null);
+    let component = new LogDetailComponent(null, null, null, null, null, null, null, null);
     expect(component).toBeTruthy();
   });
 });

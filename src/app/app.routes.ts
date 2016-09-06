@@ -1,13 +1,18 @@
-import { RouterModule, RouterConfig } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { dashboardRoutes } from './dashboard';
+import { dashboardRoutes, dashboardProviders } from './dashboard';
 import { logRoutes } from './+logs';
 import { vechicleRoutes } from './+vehicles';
 
-const APP_ROUTER_CONFIG: RouterConfig = [
+const appRoutes: Routes = [
   ...dashboardRoutes,
   ...logRoutes,
   ...vechicleRoutes
 ];
 
-export const APP_ROUTER_PROVIDERS = RouterModule.forRoot(APP_ROUTER_CONFIG);
+export const appRoutingProviders: any[] = [
+  dashboardProviders
+];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

@@ -1,30 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { Location } from '@angular/common';
 
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { MdInput } from '@angular2-material/input';
-
-import { ModalService, ToastService } from '../shared';
+import { ModalService } from '../shared/modal/modal.service';
+import { ToastService } from '../shared/toast/toast.service';
 import { VehicleService, IVehicle, Vehicle } from '../core/vehicles';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-vehicle',
   templateUrl: 'vehicle.component.html',
   styleUrls: ['vehicle.component.css'],
-  directives: [MD_CARD_DIRECTIVES, MD_BUTTON_DIRECTIVES, MdInput, ROUTER_DIRECTIVES]
 })
-export class VehicleComponent implements OnInit {
+export class VehicleComponent implements OnInit, OnDestroy {
   adding: boolean = false;
   vehicle: IVehicle;
-  editableVehicle: IVehicle = new Vehicle('','','');
+  editableVehicle: IVehicle = new Vehicle('', '', '');
 
   private _sub: any;
 
   constructor(private _router: Router,
+    private _route: ActivatedRoute,
     private _toastService: ToastService,
     private _modalService: ModalService,
     private _location: Location,
@@ -35,13 +31,14 @@ export class VehicleComponent implements OnInit {
   ngOnInit(): void {
     let id: string;
     let isNew: boolean;
-    this._sub = this._router
-      .routerState
+    this._sub = this._route
       .queryParams
       .subscribe(params => {
         if (params[`id`] != null) {
           id = params[`id`];
-          if (id === `new`) isNew = true;
+          if (id === `new`) {
+            isNew = true;
+          }
         }
       });
     this.adding = isNew;
@@ -78,8 +75,7 @@ export class VehicleComponent implements OnInit {
           }
           );
       }
-    }
-    catch (error) {
+    } catch (error) {
       this.handleError(error);
     }
   }

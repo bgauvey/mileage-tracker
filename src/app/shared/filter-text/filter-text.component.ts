@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MdInput } from '@angular2-material/input';
 
 @Component({
   selector: 'filter-text',
-  templateUrl: 'app/shared/filter-text/filter-text.component.html',
-  directives: [MdInput]
+  templateUrl: './filter-text.component.html',
 })
 export class FilterTextComponent {
   @Output() changed: EventEmitter<string>;

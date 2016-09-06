@@ -1,17 +1,11 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
-import {
-  async, inject
-} from '@angular/core/testing';
-
+import { TestBed, async } from '@angular/core/testing';
 import { VehicleComponent } from './vehicle.component';
 
 describe('Component: Vehicle', () => {
   it('should create an instance', () => {
-    let component = new VehicleComponent(null, null, null, null,null);
+    let component = new VehicleComponent(null, null, null, null, null, null);
     expect(component).toBeTruthy();
   });
 });

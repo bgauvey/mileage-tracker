@@ -1,22 +1,35 @@
 /* tslint:disable:no-unused-variable */
 
-import {
-  async, inject
-} from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
 import { AuthService } from './core/auth';
 
-//beforeEachProviders(() => [AppComponent, AuthService]);
-
 describe('App: ServiceTracker', () => {
-  it('should create the app',
-    inject([AppComponent], (app: AppComponent) => {
-      expect(app).toBeTruthy();
-    }));
+    beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    });
+  });
 
-  it('should have as title \'Service Tracker\'',
-    inject([AppComponent], (app: AppComponent) => {
-      expect(app.title).toEqual('Service Tracker');
-    }));
+  it('should create the app', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  }));
+
+  it(`should have as title 'Service Tracker'`, async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('Service Tracker');
+  }));
+
+  it('should render title in a h1 tag', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Service Tracker');
+  }));
 });

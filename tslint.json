@@ -1,55 +1,34 @@
 {
+  "rulesDirectory": [
+    "node_modules/codelyzer"
+  ],
   "rules": {
-    "align": [
-      false,
-      "parameters",
-      "arguments",
-      "statements"
-    ],
-    "ban": [
-      true,
-      [ "_", "forEach" ],
-      [ "_", "each" ],
-      [ "$", "each" ],
-      [ "angular", "forEach" ]
-    ],
     "class-name": true,
     "comment-format": [
-      false,
-      "check-space",
-      "check-lowercase"
+      true,
+      "check-space"
     ],
-    "curly": false,
+    "curly": true,
     "eofline": true,
     "forin": true,
     "indent": [
       true,
       "spaces"
     ],
-    "interface-name": [
-      true,
-      "always-prefix"
-    ],
-    "jsdoc-format": true,
     "label-position": true,
     "label-undefined": true,
     "max-line-length": [
-      false,
+      true,
       140
     ],
     "member-access": false,
     "member-ordering": [
       true,
-      "public-before-private",
       "static-before-instance",
       "variables-before-functions"
     ],
-    "no-angle-bracket-type-assertion": true,
-    "no-any": false,
     "no-arg": true,
     "no-bitwise": true,
-    "no-conditional-assignment": true,
-    "no-consecutive-blank-lines": false,
     "no-console": [
       true,
       "debug",
@@ -59,59 +38,40 @@
       "trace"
     ],
     "no-construct": true,
-    "no-constructor-vars": false,
     "no-debugger": true,
     "no-duplicate-key": true,
     "no-duplicate-variable": true,
-    "no-empty": true,
+    "no-empty": false,
     "no-eval": true,
-    "no-inferrable-types": false,
-    "no-internal-module": true,
-    "no-invalid-this": true,
-    "no-null-keyword": false,
-    "no-reference": false,
-    "no-require-imports": false,
-    "no-shadowed-variable": false,
+    "no-inferrable-types": true,
+    "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
-    "no-unreachable": true,
     "no-unused-expression": true,
     "no-unused-variable": true,
+    "no-unreachable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
-    "no-var-requires": false,
     "object-literal-sort-keys": false,
     "one-line": [
       true,
       "check-open-brace",
+      "check-catch",
+      "check-else",
       "check-whitespace"
     ],
     "quotemark": [
       true,
-      "single",
-      "avoid-escape"
+      "single"
     ],
     "radix": true,
-    "semicolon": [true, "always"],
-    "switch-default": true,
-    "trailing-comma": [
-      true,
-      {
-        "multiline": "never",
-        "singleline": "never"
-      }
+    "semicolon": [
+      "always"
     ],
     "triple-equals": [
       true,
       "allow-null-check"
-    ],
-    "typedef": [
-      true,
-      "call-signature",
-      "parameter",
-      "property-declaration",
-      "member-variable-declaration"
     ],
     "typedef-whitespace": [
       true,
@@ -121,33 +81,30 @@
         "parameter": "nospace",
         "property-declaration": "nospace",
         "variable-declaration": "nospace"
-      },
-      {
-        "call-signature": "space",
-        "index-signature": "space",
-        "parameter": "space",
-        "property-declaration": "space",
-        "variable-declaration": "space"
       }
     ],
-    "use-isnan": true,
-    "use-strict": [
-      false,
-      "check-module",
-      "check-function"
-    ],
-    "variable-name": [
-      true,
-      "check-format",
-      "allow-leading-underscore",
-      "ban-keywords"
-    ],
+    "variable-name": false,
     "whitespace": [
       true,
       "check-branch",
       "check-decl",
       "check-operator",
+      "check-separator",
       "check-type"
-    ]
+    ],
+
+    "directive-selector-name": [true, "camelCase"],
+    "component-selector-name": [false, "kebab-case"],
+    "directive-selector-type": [true, "attribute"],
+    "component-selector-type": [true, "element"],
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": true,
+    "no-input-rename": true,
+    "no-output-rename": true,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": true,
+    "directive-class-suffix": true
   }
 }

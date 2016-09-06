@@ -4,8 +4,8 @@ import { ToastService } from './toast.service';
 
 @Component({
   selector: 'toast',
-  templateUrl: 'app/shared/toast/toast.component.html',
-  styleUrls: ['app/shared/toast/toast.component.css']
+  templateUrl: './toast.component.html',
+  styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnInit {
   title: string;

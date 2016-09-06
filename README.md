@@ -1,33 +1,31 @@
-[![Build Status](https://travis-ci.org/bgauvey/service-tracker.svg?branch=master)](https://travis-ci.org/bgauvey/service-tracker)
+# TestNg
 
-# Angular2 Service Tracker with TypeScript
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.3.
 
-The goal of this app is to provide a simple way to get started with Angular 2 while
-also showing several key Angular 2 features. The sample relies on System.js to load 
-TypeScript modules and the required scripts used in the application.
+## Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
-## Angular 2 Concepts Covered
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
 
-* TypeScript version that relies on classes and modules
-* Modules are loaded with System.js
-* Defining routes (including child routes)
-* Using Custom Components
-* Using Custom Directives
-* Using Custom Pipes
-* Defining Properties and Using Events in Components/Directives
-* Using the Http object for Ajax calls along with Rx observables
-* Working with Utility and Service classes (such as for sorting and Ajax calls)
-* Using Angular 2 databinding Syntax [], () and [()]
-* Using Angular forms functionality for capturing and validating data
+## Build
 
-## Additional Components Used
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-* Materal2 - Material Design components for Angular 2 https://material.angular.io/
-* AngularFire2 - Angular 2 library for Firebase. https://angularfire2.com
+## Running unit tests
 
-## Running the Application
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-1. Run `npm install` to install app dependencies
+## Running end-to-end tests
 
-2. Run `ng serve` in a separate terminal window to build the TypeScript, watch for changes and launch the web server
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
+Before running the tests make sure you are serving the app via `ng serve`.
+
+## Deploying to Github Pages
+
+Run `ng github-pages:deploy` to deploy to Github Pages.
+
+## Further help
+
+To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

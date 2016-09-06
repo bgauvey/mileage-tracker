@@ -1,24 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MD_ICON_DIRECTIVES } from '@angular2-material/icon';
 
-import { FilterService, FilterTextComponent } from '../shared';
 import { LogService, ILog } from '../core/logs';
 
 @Component({
-  moduleId: module.id,
   selector: 'log-list',
   templateUrl: 'log-list.component.html',
   styleUrls: ['log-list.component.css'],
-  directives: [ROUTER_DIRECTIVES, FilterTextComponent, MD_BUTTON_DIRECTIVES, MD_LIST_DIRECTIVES, MD_ICON_DIRECTIVES]
 })
 export class LogListComponent implements OnInit {
   logs: Observable<ILog[]>;
 
-  constructor(private router: Router, private _filterService: FilterService, private _logService: LogService) { }
+  constructor(private router: Router,  private _logService: LogService) { }
 
   ngOnInit(): void {
     this.logs = this._logService.getTop4();

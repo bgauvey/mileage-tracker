@@ -18,8 +18,7 @@ export class FilterService {
         return match;
       });
       filteredList = filtered;
-    }
-    else {
+    } else {
       filteredList = originalList;
     }
     return filteredList;

@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://npmcdn.com/angularfire2@2.0.0-beta.2/firebase3.d.ts",
+    "raw": "https://npmcdn.com/angularfire2@2.0.0-beta.2/firebase3.d.ts",
+    "typings": "https://npmcdn.com/angularfire2@2.0.0-beta.2/firebase3.d.ts"
+  }
+}
