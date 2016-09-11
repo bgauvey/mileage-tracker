@@ -3,7 +3,9 @@ node_js:
 - "6"
 
 before_install:
-- npm install -g angular-cli
+- npm uninstall -g angular-cli
+- npm cache clean
+- npm install -g angular-cli@webpack
 
 script:
 - ng build
