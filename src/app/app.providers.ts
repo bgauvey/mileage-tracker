@@ -1,5 +1,5 @@
-import { MdIconRegistry } from '@angular2-material/icon';
-import { MdUniqueSelectionDispatcher } from '@angular2-material/radio';
+import { MdIconRegistry } from '@angular/material/icon';
+// import { MdUniqueSelectionDispatcher } from '@angular/material/radio';
 
 import { ModalService } from './shared/modal/modal.service';
 import { ToastService } from './shared/toast/toast.service';
@@ -15,6 +15,6 @@ export const APP_PROVIDERS = [
     ModalService,
     // SpinnerService,
     ToastService,
-    MdIconRegistry,
-    MdUniqueSelectionDispatcher
+    MdIconRegistry
+    // MdUniqueSelectionDispatcher
 ];

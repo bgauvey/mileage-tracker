@@ -4,16 +4,16 @@ import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 // Material Design
-import { MdButtonModule }   from '@angular2-material/button';
-import { MdToolbarModule }  from '@angular2-material/toolbar';
-import { MdCardModule }     from '@angular2-material/card';
-import { MdIconModule }    from '@angular2-material/icon';
-import { MdInputModule }    from '@angular2-material/input';
-import { MdCheckboxModule } from '@angular2-material/checkbox';
-import { MdSidenavModule } from '@angular2-material/sidenav';
-import { MdListModule } from '@angular2-material/list';
-import { MdRadioModule } from '@angular2-material/radio';
-import { MdProgressCircleModule } from '@angular2-material/progress-circle';
+import { MdButtonModule }   from '@angular/material/button';
+import { MdToolbarModule }  from '@angular/material/toolbar';
+import { MdCardModule }     from '@angular/material/card';
+import { MdIconModule }    from '@angular/material/icon';
+import { MdInputModule }    from '@angular/material/input';
+import { MdCheckboxModule } from '@angular/material/checkbox';
+import { MdSidenavModule } from '@angular/material/sidenav';
+import { MdListModule } from '@angular/material/list';
+import { MdRadioModule } from '@angular/material/radio';
+import { MdProgressCircleModule } from '@angular/material/progress-circle';
 
 
 // app

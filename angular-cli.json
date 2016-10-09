@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.11-webpack.3",
+    "version": "1.0.0-beta.17",
     "name": "service-tracker"
   },
     "apps": [
@@ -39,7 +39,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "prefixInterfaces": false,
-    "lazyRoutePrefix": "+"
+    "prefixInterfaces": false
   }
 }
