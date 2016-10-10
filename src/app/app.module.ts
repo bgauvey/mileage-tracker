@@ -4,17 +4,7 @@ import { HttpModule }    from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 // Material Design
-import { MdButtonModule }   from '@angular/material/button';
-import { MdToolbarModule }  from '@angular/material/toolbar';
-import { MdCardModule }     from '@angular/material/card';
-import { MdIconModule }    from '@angular/material/icon';
-import { MdInputModule }    from '@angular/material/input';
-import { MdCheckboxModule } from '@angular/material/checkbox';
-import { MdSidenavModule } from '@angular/material/sidenav';
-import { MdListModule } from '@angular/material/list';
-import { MdRadioModule } from '@angular/material/radio';
-import { MdProgressCircleModule } from '@angular/material/progress-circle';
-
+import { MaterialModule }   from '@angular/material';
 
 // app
 import { AppComponent } from './app.component';
@@ -54,16 +44,7 @@ import { VEHICLE_PROVIDERS } from './core/vehicles';
         FormsModule,
         HttpModule,
         // Material Design
-        MdButtonModule,
-        MdToolbarModule,
-        MdCardModule,
-        MdIconModule,
-        MdInputModule,
-        MdCheckboxModule,
-        MdSidenavModule,
-        MdListModule,
-        MdProgressCircleModule,
-        MdRadioModule
+        MaterialModule.forRoot()
     ],
     bootstrap: [AppComponent],
     providers: [
