@@ -6,8 +6,8 @@ declare var componentHandler: any;
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   providers: [APP_PROVIDERS]
 })
 export class AppComponent {

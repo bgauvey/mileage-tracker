@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import { LogService, ILog } from '../core/logs';
 
 @Component({
-  selector: 'log-list',
-  templateUrl: 'log-list.component.html',
-  styleUrls: ['log-list.component.css'],
+  selector: 'app-log-list',
+  templateUrl: './log-list.component.html',
+  styleUrls: ['./log-list.component.css'],
 })
 export class LogListComponent implements OnInit {
   logs: Observable<ILog[]>;

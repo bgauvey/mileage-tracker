@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
-import { AuthProviders, FirebaseAuth, FirebaseAuthState } from 'angularfire2';
+import { AngularFire, AngularFireAuth, AuthProviders, AuthMethods, FirebaseAuthState } from 'angularfire2';
 
 @Injectable()
 export class AuthService {
-  private authState: FirebaseAuthState = null;
+  auth: AngularFireAuth = null;
 
-  constructor(public auth$: FirebaseAuth) {
-    auth$.subscribe((state: FirebaseAuthState) => {
-      this.authState = state;
+  private authState: FirebaseAuthState = null;
+  
+
+  constructor(private af: AngularFire) {
+    this.auth = this.af.auth;
+    this.auth.subscribe(auth => {
+      this.authState = auth;
     });
   }
 
   get userImage(): string {
     let path: string;
-    this.auth$.subscribe((data) => {
+    this.auth.subscribe((data) => {
       if (data) {
         path = data.auth.photoURL;
       }
@@ -30,7 +34,7 @@ export class AuthService {
   }
 
   signIn(provider: number): firebase.Promise<FirebaseAuthState> {
-    return this.auth$.login({ provider })
+    return this.auth.login({ provider: provider, method: AuthMethods.Popup })
       .catch(error => console.log('ERROR @ AuthService#signIn() :', error));
   }
 
@@ -47,6 +51,6 @@ export class AuthService {
   }
 
   signOut(): void {
-    this.auth$.logout();
+    this.auth.logout();
   }
 }

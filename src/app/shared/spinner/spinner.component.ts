@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Rx';
 import { ISpinnerState, SpinnerService } from './spinner.service';
 
 @Component({
-  selector: 'spinner',
+  selector: 'app-spinner',
   template: `<md-spinner [class.is-active]="visible"></md-spinner>`,
   styles: [`.spinner {position: absolute;left: 46%;top: 12%`],
 })

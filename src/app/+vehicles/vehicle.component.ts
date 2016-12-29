@@ -9,8 +9,8 @@ import { VehicleService, IVehicle, Vehicle } from '../core/vehicles';
 
 @Component({
   selector: 'app-vehicle',
-  templateUrl: 'vehicle.component.html',
-  styleUrls: ['vehicle.component.css'],
+  templateUrl: './vehicle.component.html',
+  styleUrls: ['./vehicle.component.css'],
 })
 export class VehicleComponent implements OnInit, OnDestroy {
   adding: boolean = false;

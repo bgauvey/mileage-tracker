@@ -4,7 +4,7 @@ import { ModalService } from './modal.service';
 const KEY_ESC = 27;
 
 @Component({
-  selector: 'modal-confirm',
+  selector: 'app-modal-confirm',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
 })

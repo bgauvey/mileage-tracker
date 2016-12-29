@@ -5,9 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import { VehicleService, IVehicle } from '../core/vehicles';
 
 @Component({
-  selector: 'vehicle-list',
-  templateUrl: 'vehicle-list.component.html',
-  styleUrls: ['vehicle-list.component.css'],
+  selector: 'app-vehicle-list',
+  templateUrl: './vehicle-list.component.html',
+  styleUrls: ['./vehicle-list.component.css'],
 })
 export class VehicleListComponent implements OnInit {
   vehicles: Observable<IVehicle[]>;

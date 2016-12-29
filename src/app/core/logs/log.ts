@@ -1,3 +1,5 @@
+import * as firebase from 'firebase';
+
 export enum LogType {
     Fuel,
     Repair,
@@ -17,7 +19,7 @@ export interface ILog {
 }
 
 export class Log implements ILog {
-    createdAt: number = firebase.database['ServerValue']['TIMESTAMP'];
+    createdAt: number = <number> firebase.database.ServerValue.TIMESTAMP;
     odometer: number;
     gallons: number;
     costPerGallon: number;
