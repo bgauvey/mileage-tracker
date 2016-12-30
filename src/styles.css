@@ -24,7 +24,7 @@ article {
 }
 
 .service-tracker-app {
-  background: url('./app/assets/Free-Highway-Backgrounds-Highway-Wallpaper-Images-in-HD-For-Desktops-Laptops.jpg') center / cover !important;
+  background: url('./assets/Free-Highway-Backgrounds-Highway-Wallpaper-Images-in-HD-For-Desktops-Laptops.jpg') center / cover !important;
 }
 .service-tracker-app md-toolbar {
   /* This background is dark, so we set text to white. Use 87% black instead if

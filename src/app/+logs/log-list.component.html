@@ -10,7 +10,7 @@
     <md-list>
         <h3 md-subheader>Receipts</h3>
         <a md-list-item *ngFor="let log of logs | async" (click)="gotoDetail(log.$key)">
-            <img md-list-avatar src="./app/assets/receipt.png" alt="receipt">
+            <img md-list-avatar src="./assets/receipt.png" alt="receipt">
             <h4 md-line>{{getTypeString(log.logType)}}</h4>
             <p md-line> {{getDate(log.createdAt)}} </p>
             <p md-line class="secondary"> {{(log.totalCost * 1) | currency:'USD':true}} </p>
